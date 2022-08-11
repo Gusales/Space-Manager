@@ -1,0 +1,107 @@
+::placeholder{
+    text-align: center;
+}
+::placeholder:disabled{
+    color: black;
+}
+input {
+    width: 200;
+    height: 25px;
+    padding-left: 3px;
+    border: 1px solid lightgrey;
+    border-radius: 4px;
+    text-align: center;
+}
+input:disabled{
+    border: none;
+    background-color: white;
+}
+input:focus{
+    outline: 2px solid #d60404;
+    border: none;
+}
+label{
+    margin-top: 10px;
+}
+i{
+    font-size: 25px;
+}
+.profileContainer {
+    margin: 0 auto;
+    width: 65%;
+    height: 500px;
+    background-color: white;
+    margin-top: 25px;
+    border-radius: 13px;
+    padding-left: 10px;
+    padding-top: 10px;
+    box-shadow: 5px 5px black;
+    display: flex;
+    /* flex-direction: row;
+    flex-wrap: wrap; */
+    flex-flow: row wrap;
+}
+
+.fotoLine {
+    margin: 0 auto;
+    text-align: center;
+}
+
+.containerProf {
+    margin: 0 auto;
+    text-align: center;
+}
+
+.fotoProf {
+    height: 100px;
+    width: 100px;
+    text-align: center;
+}
+
+.userInfo {
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: center;
+    align-content: center;
+}
+
+.reservas {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-evenly;
+}
+.fa-solid{
+    color: white;
+    margin-top: 10px;
+    text-align: center;
+    padding-top: 10px;
+    width: 45px;
+    height: 35px;
+    cursor: pointer;
+    border-radius: 50%;
+}
+.fa-check{
+    background-color: rgb(67, 245, 67);
+    color: rgb(73, 70, 70);
+    border: 1px solid black;
+
+}
+.fa-trash{
+    background-color: #d60404;
+    text-shadow: 1px 1px black;
+    border: 1px solid black;
+}
+.fa-user-pen{
+    padding-left: 2px;
+    width: 47px;
+    height: 37px;
+    text-align: center;
+    text-shadow: 1px 1px black;
+    /* border: 1px solid #d60404; */
+    border-radius: 49%;
+    background-color: rgb(70, 197, 240);
+    border: 1px solid black;
+}
+.fa-bars{
+    padding-top: 0px;
+}

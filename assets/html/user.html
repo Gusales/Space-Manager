@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Space Manager</title>
+  <link rel="icon" type="image/x-icon" href="../img/calendario.ico">
+  <link rel="stylesheet" href="../css/style.css" />
+  <link rel="stylesheet" href="../css/profile.css">
+  <link rel="stylesheet" href="../css/modal.css">
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" />
+</head>
+
+<body>
+  <div class="modal-container">
+    <div class="menuModal">
+      <ul>
+        <li><a href="calendar.html">Calendário de Reservas</a></li>
+        <li><a href="#">Perfil de Usuário</a></li>
+      </ul>  
+      <button onclick="quitMenuModal()" class="menuModalBtn">Fechar Menu</button>
+      <button onclick="redirectLogin()" class="menuModalBtn">Fazer Log Out</button>
+    </div>
+  </div>
+
+
+  <header>
+    <h1>Etec</h1>
+    <h1 class="h2-header">Space Manager</h2>
+      <a href="#" class="a-header"><i class="fa-solid fa-bars" onclick="openMenuModal()"></i></a>
+  </header>
+
+  <div class="profileContainer">
+    <div class="fotoLine">
+      <img class="fotoProf" src="../img/userPhoto.png" alt="Foto de perfil do Professor">
+      <h2 class="nomeProf">Nome do Professor</h2>
+      <h3 class="escolaProf">Etec Antônio Furlan</h3>
+    </div>
+
+    <div class="containerProf">
+      <h2>Dados Pessoais</h2>
+      <hr>
+      <form action="" method="post">
+        <div class="userInfo">
+          <label for="email">Email: <br>
+            <input type="email" name="email" id="emailID" placeholder="email@teste.com" disabled>
+          </label>
+          <label for="number">Número: <br>
+            <input type="tel" name="number" id="numID" placeholder="(11)0000-0000" disabled>
+          </label>
+        </div>
+
+        <div class="editConfigOff">
+          <i class="fa-solid fa-check"></i>
+          <i class="fa-solid fa-trash"></i>
+        </div>
+        <div class="editConfigOn">
+          <i class="fa-solid fa-user-pen"></i>
+        </div>
+      </form>
+    </div>
+
+  </div>
+</body>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.inputmask/5.0.7/jquery.inputmask.min.js"></script>
+<script src="../js/main.js"></script>
+<script src="../js/login.js"></script>
+</html>

@@ -1,0 +1,135 @@
+::placeholder {
+    color: rgb(74, 71, 71);
+}
+
+hr {
+    margin-top: 40px;
+    margin-bottom: 40px;
+    width: 90%;
+    margin-left: 45px;
+}
+
+.profile {
+    height: 100%;
+    border-right: 1px solid rgb(121, 111, 111);
+    display: inline-block;
+}
+
+
+.profileContainer {
+    height: 100%;
+    margin-top: 20px;
+}
+
+.profileImg {
+    width: 200px;
+    height: 200px;
+    margin-top: 20px;
+}
+
+.profileName {
+    text-shadow: none;
+    font-size: 40px;
+}
+
+.profileNum {
+    font-size: 24px;
+}
+
+.formProfile {
+    padding-top: 20px;
+    text-align: center;
+    width: 50%;
+    display: inline-block;
+}
+
+#emailProfile,
+#numProfile,
+#matProfile,
+#nomeProfile, #rmProfile {
+    margin-bottom: 20px;
+    width: 200px;
+    background-color: #d2cfcf;
+    border: none;
+    border-radius: 0%;
+    text-align: center;
+    height: 25px;
+    border: 1px solid rgb(74, 71, 71);
+    border-radius: 2px;
+}
+
+::placeholder {
+    color: rgb(74, 71, 71);
+}
+
+.list {
+    width: 40%;
+    font-size: 20px;
+    text-align: center;
+    margin-left: 13px;
+    margin-top: 20px;
+    display: inline-block;
+}
+
+p {
+    display: inline;
+}
+
+.profile,
+.profileContainer {
+    width: none;
+    height: auto;
+}
+
+.mainContainer {
+    height: 700px;
+    min-width: 400px;
+    display: flex;
+}
+.mainContainer > div{
+    flex: 1 1 200px;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+.profileName,
+.profileNum {
+    text-align: center;
+    margin: 0 auto;
+}
+
+.headerProfile {
+    min-width: 250;
+    width: 100%;
+}
+
+#cancelButton {
+  background-color: #d36c6c;
+  width: 35px;
+  height: 35px;
+  border: none;
+  cursor: pointer;
+}
+
+#saveButton {
+  background-color: #92a1d1;
+  width: 35px;
+  height: 35px;
+  color: black;
+  border: none;
+  cursor: pointer;
+}
+#saveButton:hover, #cancelButton:hover{
+    border-radius: 20%;
+}
+.fa-plus{
+    cursor: pointer;
+    margin-left: 5px;
+    font-size: 13px;
+}
+.addFotoProf{
+    text-decoration: none;
+    width: 200px;
+    height: 20px;
+    color: #B70407;
+    font-size: 21px;
+}

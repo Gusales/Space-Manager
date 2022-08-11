@@ -1,0 +1,161 @@
+.bodyTable {
+    min-height: 80vh;
+    display: flex;
+    flex-flow: row;
+    justify-content: space-around;
+    align-items: center;
+}
+
+i {
+    color: white;
+    font-size: 35px;
+}
+
+.control {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    text-align: center;
+    height: 20vh;
+    width: 7%;
+    background-color: #d60404;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.control:hover {
+    width: 10%;
+    height: 30vh;
+    transition: all .2s ease-in-out
+}
+
+.control::before {
+    transition: all .2s ease-in-out
+}
+
+table {
+    width: 75%;
+    font-family: sans-serif;
+    text-align: center;
+    background-color: #fff;
+    border-radius: 5px;
+}
+
+th {
+    background-color: #d60404;
+    text-shadow: 2px 2px black;
+    color: white;
+    border-radius: 5px;
+}
+
+th,
+td {
+    padding: .6em;
+    font-size: 1.2em;
+    border-radius: 5px;
+    cursor: pointer;
+
+}
+
+td:hover {
+    background-color: white;
+}
+
+tbody {
+    background-color: rgb(240, 240, 240);
+}
+
+@keyframes cresce {
+    from {
+        height: 20vh;
+        width: 7%;
+    }
+
+    to {
+        width: 10%;
+        height: 30vh;
+    }
+}
+
+@media (max-width: 900px) {
+    .control {
+        width: 45px;
+    }
+
+    table {
+        width: 60%;
+    }
+}
+
+@media (max-width: 800px) {
+    .control {
+        display: none;
+    }
+
+    thead {
+        display: none;
+    }
+
+    td {
+        display: block;
+    }
+
+    td:first-child {
+        background-color: #d60404;
+        text-shadow: 2px 2px black;
+        color: white;
+        text-align: center;
+    }
+
+    td:nth-child(2)::before {
+        content: "00:00 - 00:00";
+    }
+
+    td:nth-child(3)::before {
+        content: "00:00 - 00:00";
+    }
+
+    td:nth-child(4)::before {
+        content: "00:00 - 00:00";
+    }
+
+    td:nth-child(5)::before {
+        content: "00:00 - 00:00";
+    }
+
+    td:nth-child(6)::before {
+        content: "00:00 - 00:00";
+    }
+
+    td:nth-child(7)::before {
+        content: "00:00 - 00:00";
+    }
+
+    td {
+        text-align: right;
+    }
+
+    td::before {
+        float: left;
+        margin-right: 3em;
+        font-weight: bold;
+    }
+}
+
+@media (max-width: 400px) {
+    table {
+        max-width: 400px;
+        text-align: center;
+    }
+
+    td {
+        text-align: left;
+    }
+
+    td::before {
+        float: none;
+        margin-right: none;
+        font-weight: bold;
+    }
+}

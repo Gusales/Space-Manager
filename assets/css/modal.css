@@ -1,0 +1,64 @@
+ul {
+    width: 100%;
+    height: 90%;
+}
+
+ul a {
+    text-decoration: none;
+    cursor: pointer;
+    color: #d60404;
+    font-size: 20px;
+}
+
+ul a:hover {
+    text-decoration: underline;
+    font-size: 24px;
+}
+
+.modal-container .menuModalBtn {
+    text-shadow: 1px 1px black;
+    background-color: #d60404;
+}
+
+.modal-container {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    z-index: 999;
+    justify-content: right;
+    display: none;
+    background-color: rgba(0, 0, 0, 0.342);
+    text-align: center;
+}
+
+.menuModal {
+    padding: 30px;
+    background-color: white;
+    border-radius: 10px;
+    width: 20%;
+    height: 300px;
+    margin-top: 30px;
+    margin-right: 20px;
+    background-color: #e8f4fa;
+
+}
+
+.active {
+    display: flex;
+}
+
+.active .menuModal {
+    animation: modal .4s;
+}
+
+@keyframes modal {
+    from {
+        opacity: 0;
+        transform: translate3d(60px, 0, 0);
+    }
+
+    to {
+        opacity: 1;
+        transform: translate3d(0, 0, 0);
+    }
+}

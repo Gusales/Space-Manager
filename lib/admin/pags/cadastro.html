@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Space Manager - Cadastro de novos usuários</title>
+    <link rel="stylesheet" href="../../css/style.css">
+    <link rel="stylesheet" href="../../css/modal.css">
+    <link rel="stylesheet" href="../css/profile.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" />
+</head>
+
+<div class="modal-container">
+    <div class="menuModal">
+        <ul>
+            <li><a href="professores.html">Professores cadastrados</a></li>
+            <li><a href="../home.html">Horários das reservas</a></li>
+        </ul>
+        <button onclick="quitMenuModal()" class="menuModalBtn">Fechar Menu</button>
+        <button onclick="redirectLogin()" class="menuModalBtn">Fazer Log Out</button>
+    </div>
+</div>
+
+<header>
+    <h1>Etec</h1>
+    <h1 class="h2-header">Space Manager</h1>
+    <a href="#" class="a-header"><i class="fa-solid fa-bars" onclick="openMenuModal()"></i></a>
+</header>
+<section class="mainContainer">
+    <div class="profile">
+        <img src="../../img/userPhoto.png" alt="Imagem de perfil" class="profileImg"><br>
+        <a href="" class="addFotoProf">Adicionar Foto do Professor</a>
+    </div>
+    <div class="profileContainer">
+        <div class="headerProfile">
+            <h2>Cadastrar novo usuário</h2>
+            <form action="" method="post" class="formProfile">
+                <label for="Email">Nome completo:</label><br>
+                <input type="text" placeholder="Nome sobrenome" id="nomeProfile"><br>
+                <label for="Email">Email:</label><br>
+                <input type="email" placeholder="exemplo@exemplo.com" id="emailProfile"><br>
+                <label for="Email">Número de matrícula:</label><br>
+                <input type="number" placeholder="111" id="rmProfile"><br>
+                <label for="materia">Matéria(s):</label><br>
+                <input type="email" placeholder="Lingua Portuguesa" id="matProfile"><i class="fa-solid fa-plus"
+                    alt="adicionar nova matéria"></i><br>
+                <label for="Numero">Telefone e/ou Celular:</label><br>
+                <input type="number" placeholder="(11) 1111-1111" id="numProfile"><br>
+
+                <button id="saveButton"><i class="fa-solid fa-floppy-disk"></i></button>
+                <button id="cancelButton"><i class="fa-solid fa-xmark"></i></button>
+            </form>
+        </div>
+    </div>
+</section>
+</body>
+<script src="../../js/main.js"></script>
+<script src="../js/login.js"></script>
+</html>

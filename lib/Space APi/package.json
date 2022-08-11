@@ -1,0 +1,17 @@
+{
+  "name": "space-api",
+  "version": "1.0.0",
+  "description": "Api criada para fazer a conexão entre Space Manager (Front-End), com o banco de dados",
+  "main": "index.js",
+  "scripts": {
+    "start:dev": "nodemon index.js"
+  },
+  "author": "Equipe SM",
+  "license": "ISC",
+  "devDependencies": {
+    "nodemon": "^2.0.19"
+  },
+  "dependencies": {
+    "express": "^4.18.1"
+  }
+}

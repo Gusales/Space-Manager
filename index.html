@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-<head>
+  <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -8,32 +8,38 @@
     <link rel="icon" type="image/x-icon" href="assets/img/favicon.ico" />
     <link rel="stylesheet" href="assets/css/style.css" />
     <link rel="stylesheet" href="assets/css/login.css" />
-</head>
-<body>
+  </head>
+  <body onload="loadCap()">
     <header>
-        <h1 class="indexHeader">Space Manager</h1>
+      <h1 class="indexHeader">Space Manager</h1>
     </header>
     <div class="container">
-        <form method="post">
-            <h2>Login</h2>
-            <div class="txt_field">
-                <input type="number" id="rm" maxlength="5" required />
-                <span></span>
-                <label>RM:</label>
-            </div>
-            <div class="txt_field">
-                <input type="password" id="senha" required />
-                <span></span>
-                <label>Senha:</label>
-            </div>
-            <div class="recaptcha">
-                <input type="checkbox" />
-                <p id="recap">reCAPTCHA</p>
-            </div>
-            <a href="" class="pass">Esqueceu a Senha?</a>
-            <input type="button" class="btnLogin" value="Login" onclick="redirecionar()" />
-        </form>
+      <form method="post">
+        <h2>Login</h2>
+        <div class="txt_field">
+          <input type="number" id="rm" maxlength="5" required />
+          <span></span>
+          <label>RM:</label>
+        </div>
+        <div class="txt_field">
+          <input type="password" id="senha" required />
+          <span></span>
+          <label>Senha:</label>
+        </div>
+        <div class="recaptcha">
+          <div id="captchaV"></div>
+          <input type="text" name="" id="captchaI" placeholder="Captcha" />
+        </div>
+        <a href="" class="pass">Esqueceu a Senha?</a>
+        <input
+          type="button"
+          class="btnLogin"
+          value="Login"
+          onclick="redirecionar()"
+        />
+      </form>
     </div>
-</body>
-<script src="assets/js/invalidChars.js"></script>
+  </body>
+  <script src="assets/js/invalidChars.js"></script>
+  <script src="assets/js/login.js"></script>
 </html>

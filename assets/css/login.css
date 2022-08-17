@@ -5,6 +5,7 @@ form {
   background: white;
   border-radius: 10px;
   box-shadow: 10px 10px 15px rgba(0, 0, 0, 0.05);
+  outline: 0 !important;
 }
 
 #recap {
@@ -12,16 +13,41 @@ form {
 }
 
 .recaptcha {
+  height: 40px;
   width: 95%;
   display: flex;
   align-items: center;
   margin: 0 auto;
   margin: 0px 0px 25px 0px;
-  padding: 15px 0px 15px 15px;
+  /* padding: 15px 0px 15px 15px; */
   border: 2px solid #a6a6a6;
   border-radius: 5px;
 }
-
+#captchaV{
+  height: 100%;
+  border-right: 2px solid #a6a6a6;
+}
+#captchaI{
+  width: 70%;
+  height: 100%;
+  border: none;
+  padding-left: 10px;
+}
+#captchaI:focus{
+  outline: none;
+}
+.recaptcha #captchaV{
+  width: 30%;
+  height: 40px;
+  line-height: 20px;
+  text-align: center;
+  top: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+  top: 50%;
+}
 .container {
   height: clamp(42rem, 100%, 100rem);
 }
@@ -29,7 +55,7 @@ form {
 .container h2 {
   width: 60%;
   margin: 0 auto;
-  color: #8773c1;
+  color: #e21d1d;
   font-weight: 750;
   text-align: center;
   padding-top: 25px;
@@ -74,14 +100,14 @@ form .txt_field {
   left: 0;
   width: 0%;
   height: 2px;
-  background: #8773c1;
+  background: #e21d1d;
   transition: 0.5s;
 }
 
 .txt_field input:focus ~ label,
 .txt_field input:valid ~ label {
   top: -5px;
-  color: #8773c1;
+  color: #e21d1d;
 }
 
 .txt_field input:focus ~ span::before,
@@ -104,7 +130,7 @@ form .txt_field {
   width: 100%;
   height: 50px;
   border: none;
-  background: #8773c1;
+  background: #e21d1d;
   border-radius: 25px;
   font-size: 20px;
   color: #e9f4fb;
@@ -116,11 +142,11 @@ form .txt_field {
 }
 
 input[type="checkbox"]:checked {
-  background-color: #8773c1;
+  background-color: #e21d1d;
 }
 
 input[type="submit"]:hover {
-  border-color: #8773c1;
+  border-color: #e21d1d;
   transition: 0.5s;
 }
 

@@ -1,35 +1,32 @@
-const modal = document.querySelector('.modal-container')
-
-
-function openMenuModal() {
-    modal.classList.add('active')
-}
-function quitMenuModal() {
-    modal.classList.remove('active')
-}
 // PÁGINA DE PERFIL DO USUÁRIO
-document.querySelector('.editConfigOff').style.display = "none";
+document.querySelector('.controllers').style.display = "none";
 
-document.querySelector('.fa-user-pen').addEventListener('click', () => {
-    document.querySelector('.editConfigOff').style.display = "block";
-    document.querySelector('.editConfigOn').style.display = "none";
-    document.querySelector('#emailID').disabled = '';
-    document.querySelector('#numID').disabled = '';
+document.querySelector('#saveButton').addEventListener('click', () => {
+    document.querySelector('.controllers').style.display = "block";
+    document.querySelector('#saveButton').style.display = "none";
+    document.querySelector('input').disabled = '';
+    document.querySelector('#emailProfile').disabled = '';
+    document.querySelector('#rmProfile').disabled = '';
+    document.querySelector('#matProfile').disabled = '';
+    document.querySelector('#numProfile').disabled = '';
 })
 
-document.querySelector('.fa-check').addEventListener('click', () => {
-    document.querySelector('#emailID').disabled = "disabled";
-    document.querySelector('#numID').disabled = "disabled";
-    document.querySelector('.editConfigOff').style.display = "none";
-    document.querySelector('.editConfigOn').style.display = "block";
+document.querySelector('.fa-floppy-disk').addEventListener('click', () => {
+    document.querySelector('input').disabled = "disabled";
+    document.querySelector('#emailProfile').disabled = "disabled";
+    document.querySelector('#rmProfile').disabled = "disabled";
+    document.querySelector('#matProfile').disabled = "disabled";
+    document.querySelector('#numProfile').disabled = "disabled";
+    document.querySelector('.controllers').style.display = "none";
+    document.querySelector('#saveButton').style.display = "block";
 })
 
-document.querySelector('.fa-trash').addEventListener('click', () => {
+document.querySelector('.fa-xmark').addEventListener('click', () => {
     document.getElementById('emailID').value = "";
     document.getElementById('numID').value = "";
 })
 
 // USANDO JQUERY PRA DEIXAR OS INPUTS BONITINHOS
 $(document).ready(() => {
-    $('#numID').inputmask('(99)99999-9999')
+    $('#numProfile').inputmask('(99)99999-9999')
 });

@@ -8,11 +8,37 @@ hr {
     width: 90%;
     margin-left: 45px;
 }
+input:disabled{
+    border: none;
+    background-color: white;
+}
+input {
+    margin-bottom: 20px;
+    width: 75%;
+    height: 35px;
+    background-color: white;
+    border: 2px solid #e01313;
+    text-align: center;
+    border-radius: 10px;
+    outline: none;
+    font-size: 1.05em;
+}
+input:-webkit-autofill {
+    box-shadow: none;
+    -webkit-box-shadow: 0 0 0 30px white inset;
+}
 
+input:-webkit-autofill {
+    -webkit-text-fill-color: black !important;
+}
 .profile {
     height: 100%;
     border-right: 1px solid rgb(121, 111, 111);
-    display: inline-block;
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
 }
 
 
@@ -37,29 +63,12 @@ hr {
 }
 
 .formProfile {
-    padding-top: 20px;
     text-align: center;
-    width: 50%;
-    display: inline-block;
-}
-
-#emailProfile,
-#numProfile,
-#matProfile,
-#nomeProfile, #rmProfile {
-    margin-bottom: 20px;
-    width: 200px;
-    background-color: #d2cfcf;
-    border: none;
-    border-radius: 0%;
-    text-align: center;
-    height: 25px;
-    border: 1px solid rgb(74, 71, 71);
-    border-radius: 2px;
-}
-
-::placeholder {
-    color: rgb(74, 71, 71);
+    width: 100%;
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    /* justify-content: center; */
 }
 
 .list {
@@ -77,14 +86,19 @@ p {
 
 .profile,
 .profileContainer {
-    width: none;
-    height: auto;
+    display: flex;
+    justify-content: center;
 }
-
 .mainContainer {
-    height: 700px;
+    margin: 0 auto;
+    margin-top: 100px;
+    height: 85%;
+    width: 80%;
+    background-color: white;
     min-width: 400px;
     display: flex;
+    justify-content: center;
+    border-radius: 13px;
 }
 .mainContainer > div{
     flex: 1 1 200px;
@@ -97,8 +111,10 @@ p {
     margin: 0 auto;
 }
 
-.headerProfile {
-    min-width: 250;
+.titleProfile {
+    position: sticky;
+    height: 30px;
+    text-align: center;
     width: 100%;
 }
 
@@ -133,3 +149,18 @@ p {
     color: #B70407;
     font-size: 21px;
 }
+/* @media (max-width: 750px) {
+    ::placeholder {
+        font-size: 0.7em;
+    }
+  } */
+@media (max-width: 800px) {
+    .profile{
+        border: none;
+    }
+    .mainContainer{
+        flex-flow: column;
+        height: 950px;
+        padding-bottom: 10px;
+    }
+  }

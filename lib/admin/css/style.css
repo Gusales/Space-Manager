@@ -1,164 +1,139 @@
 * {
-    padding: 0;
     margin: 0;
+    padding: 0;
     font-family: Arial, Helvetica, sans-serif;
-}
-
-a {
-    /* color: white; */
-    text-decoration: none;
-}
-
-a:hover {
-    text-decoration-color: #d2cfcf;
-}
-
-label {
-    text-align: center;
-}
-body {
+  }
+  
+  html,
+  body {
+    height: 100%;
     background-color: #151515;
-}
-
-input {
-    width: 80%;
-    height: 20px;
-    border-radius: 5px 5px 5px 5px;
-    background-color: #DBCFCF;
-}
-
-.h1-header {
-    font-size: 30px;
-    text-shadow: 3px 2.80px black;
-}
-
-.formButton {
-    background-color: #B70407;
-    color: white;
-    border-radius: 5px 5px 5px 5px;
-    height: 45%;
-    width: 50%;
-}
-
-.ooption {
-    display: none;
-}
-
-.img-header {
-    width: 5%;
-    height: 50px;
-}
-
-.mainContainer {
-    width: 85%;
-    height: 950px;
-    margin: 0 auto;
-    margin-top: 1%;
-    margin-bottom: 1%;
-    background-color: rgb(235, 238, 241);
-    text-align: center;
-    border-radius: 13px 13px 13px 13px;
-    box-shadow: 5px 5px 9px 2px rgba(26, 25, 25, 0.73);
-}
-
-.bloco1 {
-    display: block;
-}
-
-.bloco2 {
-    display: none;
-}
-
-.bloco2 {
-    display: none;
-}
-
-.bloco1 {
-    width: 100vw;
-    height: 100vh;
+  }
+  
+  header {
+    position: fixed;
+    top: 0; 
+    width: 100%;
+    height: 30px;
+    padding: 20px 0px 20px 0px;
+    
     display: flex;
-    flex-direction: row;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
-    background-color: #211f1f;
-    /* display: none; */
+    
+    background-color: #e01313;
+    box-shadow: 5px 5px 9px 2px rgba(0, 0, 0, 0.616);
+    z-index: 3;
+  }
+  
+  h1 {
+    font-size: clamp(2rem, 10vw, 3rem);
+    padding-left: 10px;
+    text-shadow: 3px 2.8px black;
+    color: rgb(245, 248, 250);
+  }
+  
+  .container {
+    width: 100vw;
+    height: clamp(50rem, 100%, 100rem);
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .a-header{
+    padding-right: 10px;
+  }
+  
 
-}
-
-.box {
-    width: 40%;
-    height: 700px;
-    background: #fff;
-    border-radius: 13px 13px 13px 13px;
-    box-shadow: 5px 5px 9px 2px rgba(0, 0, 0, 0.73);
-}
-
-.h1-box {
-    text-align: center;
-    margin-top: 30px;
-}
-
-.h2-box {
-    text-align: center;
-    margin-top: 10px;
-}
-
-.form-box {
-    margin-top: 30px;
-    text-align: center;
-}
-
-.input-box {
-    background-color: #fff;
-}
-
-.captcha-box {
-    height: 75px;
-    width: 80%;
-    border: 1px solid black;
-    margin-top: 30px;
-    margin-left: 10%;
-}
-
-.ssub {
-    width: 100px;
-    height: 30px;
-    background-color: #B70407;
+  /* ------------------------ NOVO HEADER ------------------------*/
+  .profilePIC{
+    width: 30%;
+    margin-right: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+  }
+  .profName{
     color: white;
-    text-shadow: #151515;
-}
-
-.menuIco {
-    margin-right: 20px;
-    width: 30px;
-    height: 30px;
-    cursor: pointer;
-    border-radius: 45% 45% 45% 45%;
-}
-
-.img-menu {
-    width: 35px;
-    height: 35px;
-    /* border-radius: 50% 50% 50% 50%;
-        box-shadow: 2px 2px black; */
-    cursor: pointer;
-}
-
-.close {
-    color: #aaa;
-    /* float: left; */
-    font-size: 28px;
-    font-weight: bold;
-    color: #B70407;
-}
-.close{
-    margin-left: 90%;
-    /* position: flex; */
-}
-
-.close:hover,
-.close:focus {
-    color: black;
+    font-size: 1.2em;
+    padding-left: 10px;
+    text-shadow: 2px 2px black;
+    text-align: center;
     text-decoration: none;
-    cursor: pointer;
-}
+  }
+  .profName:hover{
+    text-decoration: underline;
+  }
+  .profPIC{
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+  }
+  .pAdm{
+    font-size: 17px;
+    display: none;
+    background-color: #e01313;
+    border: none;
+  }
+
+  /* ------------------- MENU DROPDOWN ------------------- */
+  .dropdownMenu{
+    display: none;
+    position: absolute;
+    right: 0;
+    top: 55px;
+    background-color: white;
+    border: 2px solid black;
+    width: 40%;
+    height: 125px;
+    text-align: center;
+    padding: 15px;
+    border-radius: 13px;
+  }
+  .dropLink{
+    display: inline-block;
+    color: #e01313;
+    font-size: 18px;
+    text-decoration: none;
+    margin-top: 3px;
+    padding-left: 40px;
+    padding: 0px 10px 0px 10px;
+  }
+  .exitDrop{
+    margin-top: 15px;
+    width: 100px;
+    height: 25px;
+    background-color: #e01313;
+    color: white;
+    border: none;
+    border-radius: 5px;
+  }
+  .show{
+    display: block;
+    animation: modal .3s;
+  }
+  @keyframes modal {
+    from{
+      opacity: 0;
+      transform: translate(0, -30px);
+    }
+    to{
+      opacity: 1;
+      transform: translate(0, 0);
+    }
+  }
+  @media (max-width: 750px) {
+    .profName{
+        display: none;
+    }
+    .profPIC{
+        margin-left: 5px;
+    }
+    h1{
+        font-size: 30px;
+    }
+    .pAdm{
+        display: block;
+    }
+  }

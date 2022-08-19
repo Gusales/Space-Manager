@@ -1,73 +1,35 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Space Manager</title>
-    <link rel="stylesheet" href="../../css/style.css">
-    <link rel="stylesheet" href="../css/style.css">
-    <link rel="stylesheet" href="../../css/modal.css">
-    <link rel="stylesheet" href="../css/login.css">
-    <link rel="stylesheet" href="../css/table2.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" />
-</head>
+    <link rel="stylesheet" href="../css/style.css" />
+    <!-- <link rel="stylesheet" href="../css/table2.css"> -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+    />
+  </head>
 
-<body>
-    <div class="modal-container">
-        <div class="menuModal">
-            <ul>
-                <li><a href="cadastro.html">Cadastro de novos professores</a></li>
-                <li><a href="../home.html">Horários das reservas</a></li>
-            </ul>
-            <button onclick="quitMenuModal()" class="menuModalBtn">Fechar Menu</button>
-            <button onclick="redirectLogin()" class="menuModalBtn">Fazer Log Out</button>
-        </div>
-    </div>
-
+  <body>
     <header>
-        <h1>Etec</h1>
-        <h1 class="h2-header">Space Manager</h1>
-        <a href="#" class="a-header"><i class="fa-solid fa-bars" onclick="openMenuModal()"></i></a>
+      <h1>Space Manager</h1>
+      <div class="profilePIC">
+        <a href="cadastro.html" class="profName">Adicionar usuário</a>
+        <a href="../home.html" class="profName">Reservas</a>
+        <button class="profName pAdm" onclick="openM()">
+          Painel de Administração
+        </button>
+      </div>
+      <div class="dropdownMenu">
+        <a href="cadastro.html" class="dropLink">Adicionar usuário</a></li><br><br>
+        <a href="../home.html" class="dropLink">Reservas</a><br>
+        <button class="exitDrop" onclick="quitDrop()">Sair</button>
+      </div>
     </header>
-    <section class="mainContainer">
-        <div class="table">
-            <div class="table_header">
-                <h1 class="tableHeaderTxt">Perfis Cadastrados</h1>
-                <button class="add_new"><i class="fa-solid fa-user-plus"></i></button>
-            </div>
-            <div class="table_section">
-                <table>
-                    <thead>
-                        <!-- <tr>
-                            <th>RM</th>
-                            <th>Foto</th>
-                            <th>Nome</th>
-                            <th>Email</th>
-                            <th>Editar</th>
-                        </tr> -->
-
-                        <!-- USAR ESSE TH COMO EXEMPLO -->
-                    </thead>
-                    <tbody>
-                        <!-- <tr class="row Prof1">
-                            <td class="position">1</td>
-                            <td><img src="../img/profile1.png" /></td>
-                            <td class="profN"></td>
-                            <td class="profE"></td>
-                            <td><button><i class="fa-solid fa-pen-to-square"></i></button> <button><i
-                                        class="fa-solid fa-trash"></i></button> </td>
-                        </tr> -->
-
-                        <!-- USAR ESSE TR AQUI COMO EXEMPLO-->
-                    </tbody>
-                </table>
-            </div>
-        </div>
-    </section>
-</body>
-<script src="../../js/main.js"></script>
-<script src="../js/login.js"></script>
-
+    <section class="mainContainer"></section>
+  </body>
+  <script src="../js/main.js"></script>
 </html>

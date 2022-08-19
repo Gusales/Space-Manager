@@ -6,7 +6,9 @@
     padding: 20px;
     background-color: rgb(240, 240, 240);
 }
-
+.row{
+    background-color: white;
+}
 
 
 button {

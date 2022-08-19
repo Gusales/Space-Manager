@@ -16,8 +16,6 @@ function loadCap() {
   var cVAl5 = allV[Math.floor(Math.random() * allV.length)];
 
   captchaV = cVAl1 + cVAl2 + cVAl3 + cVAl4 + cVAl5;
-  console.log(captchaV);
-
   document.getElementById("captchaV").innerHTML = captchaV;
 }
 

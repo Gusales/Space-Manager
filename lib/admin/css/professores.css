@@ -1,0 +1,107 @@
+.headerProfs{
+    height: 70px;
+}
+a:hover{
+    color: white;
+    text-shadow: none;
+}
+th, td{
+    height: 50px;
+    padding-top: 100px;
+    text-align: center;
+}
+tr{
+    cursor: pointer;
+}
+tr:hover{
+    background-color: #ece7e7;
+}
+tr:hover > .fa-solid{
+    color: white;
+}
+.firstTR:hover{
+background-color: white;
+color: black;
+cursor: auto;
+}
+.mainContainer{
+    margin: 0 auto;
+    margin-top: 80px;
+    padding: 10px 20px 10px 20px;
+
+    width: 80%;
+    min-width: 920px;
+    background-color: white;
+
+    border-radius: 13px;
+
+}
+.tableIMG{
+    width: 50px;
+    height: 50px;
+}
+
+.fa-solid{
+    font-size: 20px;
+    padding: 10px;
+    cursor: pointer;
+}
+.fa-user-plus{
+    color: #e01313;
+}
+.fa-user-pen{
+    color: rgb(27, 201, 94);
+}
+.fa-trash{
+    color: #333232;
+}
+
+/* TELA DO MOBILE */
+.mobileC{
+    display: none;
+    background-color: white;
+    width: 80%;
+    min-width: 350px;
+
+    margin: 0 auto;
+    margin-top: 80px;
+    padding: 10px 20px 10px 20px;
+
+    border-radius: 13px;
+}
+.headerM{
+    margin: 0 auto;
+    margin-top: 80px;
+    width: 80%;
+    height: 30px;
+    background-color: white;
+}
+.list-group {
+    margin: 0 auto;
+
+    width: 80%;
+
+    text-align: center;
+}
+.h1M{
+    font-size: 20px;
+    text-align: center;
+    text-shadow: none;
+    color: black;
+}
+.list-group-item{
+    cursor: pointer;
+    border-radius: 7px;
+}
+.list-group-item:hover{
+    background-color: #e01313;
+    color: white;
+}
+@media (max-width: 750px) {
+    .mobileC{
+        display: block;
+    }
+    .mainContainer{
+        display: none;
+    }
+  }

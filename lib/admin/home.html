@@ -6,26 +6,25 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Space Manager</title>
-  <link rel="shortcut icon" href="favicon.ico" type="image/x-icon"> <!-- Icone do site -->
-  <link rel="stylesheet" href="css/style.css"> <!-- Doc de estilo geral do sistema -->
-  <link rel="stylesheet" href="css/table.css"> <!-- Doc de estilo da Tabela -->
+  <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" />
-  <!-- Icones do font awesome -->
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/table.css">
 </head>
 
 <body>
   <header>
     <h1>Space Manager</h1>
     <div class="profilePIC">
-      <a href="pags/cadastro.html" class="profName">Adicionar usuário</a>
-      <a href="pags/professores.html" class="profName">Professores </a>
+      <a href="pags/cadastro.html" class="profName">Cadastrar Professor</a>
+      <a href="pags/professores.html" class="profName">Professores Cadastrados</a>
       <button class="profName pAdm" onclick="openM()">
         Painel de Administração
       </button>
     </div>
     <div class="dropdownMenu">
-      <a href="cadastro.html" class="dropLink">Adicionar usuário</a></li><br><br>
-      <a href="../home.html" class="dropLink">Reservas</a><br>
+      <a href="pags/cadastro.html" class="dropLink">Cadastrar Professor</a></li><br><br>
+      <a href="pags/professores.html" class="dropLink">Professores Cadastrados</a><br>
       <button class="exitDrop" onclick="quitDrop()">Sair</button>
     </div>
   </header>
@@ -90,7 +89,7 @@
   </div>
 </body>
 <!-- ################### SCRIPTS JS ################### -->
-<script src="../js/main.js"></script>
-<script src="../js/login.js"></script>
+<script src="js/main.js"></script>
+<script src="js/login.js"></script>
 
 </html>

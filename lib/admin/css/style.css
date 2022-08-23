@@ -58,7 +58,7 @@
     color: white;
     font-size: 1.2em;
     padding-left: 10px;
-    text-shadow: 2px 2px black;
+    /* text-shadow: 2px 2px black; */
     text-align: center;
     text-decoration: none;
   }
@@ -78,7 +78,7 @@
   }
 
   /* ------------------- MENU DROPDOWN ------------------- */
-  .dropdownMenu{
+  .dropdownMenu, .dropdownMenuProf{
     display: none;
     position: absolute;
     right: 0;
@@ -90,6 +90,10 @@
     text-align: center;
     padding: 15px;
     border-radius: 13px;
+  }
+  .dropdownMenuProf{
+    display: none;
+    height: 185px;
   }
   .dropLink{
     display: inline-block;
@@ -106,7 +110,8 @@
     height: 25px;
     background-color: #e01313;
     color: white;
-    border: none;
+    /* border: none; */
+    border: 1px solid black;
     border-radius: 5px;
   }
   .show{

@@ -36,10 +36,10 @@ th {
   height: 50px;
   border-radius: 3px 3px 3px 3px;
 }
-button {
+/* button {
   width: 25px;
   height: 25px;
-}
+} */
 
 .headerCalendar {
   width: 80%;
@@ -76,6 +76,7 @@ ul{
     display: none;
 
     width: 80%;
+    min-width: 400px;
     height: 75px;
     background-color: white;
     color: #dd3d3d;
@@ -93,6 +94,7 @@ ul{
     display: none;
 
     width: 80%;
+    min-width: 400px;
     background-color: white;
 
     margin: 0 auto;

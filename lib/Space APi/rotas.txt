@@ -31,3 +31,4 @@
     -> Modificar ou Deletar usuários
 
 
+-> excluir tela de perfil do professor e fazer um modal para mostrar as informações do professor

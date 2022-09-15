@@ -7,6 +7,7 @@
     <title>Space Manager</title>
     <link rel="icon" type="image/x-icon" href="../img/favicon.ico" />
     <link rel="stylesheet" href="../css/style.css" />
+    <link rel="stylesheet" href="../css/modal.css" />
     <link
       rel="stylesheet"
       type="text/css"
@@ -23,7 +24,7 @@
       <h1>Space Manager</h1>
       <div class="profilePIC">
           <a href="user.html" class="profName">Professor</a>
-          <a href="user.html"><img src="" alt="Foto de Perfil do Professor" srcset="" class="profPIC"></a>
+          <a href="user.html"><img src="../img/userPhoto.png" alt="Foto de Perfil do Professor" srcset="" class="profPIC"></a>
       </div>
   </header>
 
@@ -31,8 +32,75 @@
       <div id="calendar"></div>
     </div>
 
+    <div class="modal-containerSM">
+      <div class="modalSM">
+        <h1 class="h1Modal">Nova Reserva de Espaço</h1>
+        <form action="" method="get">
+          <div class="selects">
+            <div class="btn-group">
+              <button
+                type="button"
+                class="btn btn-danger dropdown-toggle spaceSM"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
+              >
+                Espaço
+              </button>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item space1" href="#" id="r" onclick="modES(1)">Exemplo</a></li>
+              </ul>
+            </div>
+            <div class="btn-group">
+              <button
+                type="button"
+                class="btn btn-danger dropdown-toggle horarioSM"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
+              >
+                Horário
+              </button>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item hItemSM1" href="#" id="r" onclick="modHS(1)">Exemplo</a></li>
+              </ul>
+            </div>
+            <div class="btn-group">
+              <button
+                type="button"
+                class="btn btn-danger dropdown-toggle materiaSM"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
+              >
+                Matéria
+              </button>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item matSM1" href="#" id="r"  onclick="modMS(1)">Exemplo</a></li>
+              </ul>
+            </div>
+          </div>
+          <h3 class="h3Modal">Descrição da Reserva</h3>
+
+          <textarea name="" id="" cols="30" rows="10"></textarea>
+          <div class="controls">
+            <button class="btnModal btnR">Reservar</button
+            ><button class="btnModal btnC" onclick="closeModal()">Cancelar</button>
+          </div>
+        </form>
+      </div>
+    </div>
+
     <script src="../../lib/calendar/js/evo-calendar.min.js"></script>
     <script src="../../lib/calendar/js/evo-calendar.js"></script>
     <script src="../../assets/js/configCalendar.js"></script>
+    <script src="../../assets/js/modal.js"></script>
+  <script
+    src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.5/dist/umd/popper.min.js"
+    integrity="sha384-Xe+8cL9oJa6tN/veChSP7q+mnSPaj5Bcu9mPX5F5xIGE0DVittaqT5lorf0EI7Vk"
+    crossorigin="anonymous"
+  ></script>
+  <script
+    src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.min.js"
+    integrity="sha384-ODmDIVzN+pFdexxHEHFBQH3/9/vQ9uori45z4JjnFsRydbmQbmL5t1tQ0culUzyK"
+    crossorigin="anonymous"
+  ></script>
   </body>
 </html>

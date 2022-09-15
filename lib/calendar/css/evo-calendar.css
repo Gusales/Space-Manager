@@ -152,7 +152,7 @@ input:focus, textarea:focus, button:focus {
 
 .calendar-inner {
     position: relative;
-    padding: 40px 30px;
+    padding: 20px 15px 20px 15px;
     float: left;
     width: 100%;
     max-width: calc(100% - 600px);
@@ -330,12 +330,12 @@ tr.calendar-body .calendar-day .day[disabled] {
 }
 .event-list > .event-empty {
     padding: 15px 10px;
-    background-color: rgba(135,115,193,.15);
-    border: 1px solid #8773c1;
+    background-color: rgba(186, 11, 11, 0.15);
+    border: 1px solid #c17373;
 }
 .event-list > .event-empty > p {
     margin: 0;
-    color: #755eb5;
+    color: red;
 }
 .event-container {
     position: relative;
@@ -1010,3 +1010,5 @@ button.icon-button > span.chevron-arrow-right {
         font-size: 14px;
     }
 }
+
+/* Correção de Bug: event-evo quebra ao puxar */

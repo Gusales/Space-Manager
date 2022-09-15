@@ -20,11 +20,11 @@ function loadCap() {
 }
 
 function redirecionar() {
-  if (iptCap.value == "") {
+  if (iptCap.value.toUpperCase() == "") {
     alert("Captcha Não preenchido!");
     captchaV = "";
     loadCap();
-  } else if (iptCap.value != captchaV) {
+  } else if (iptCap.value.toUpperCase() != captchaV) {
     alert("Captcha Errado!");
     iptCap.value = "";
     captchaV = "";

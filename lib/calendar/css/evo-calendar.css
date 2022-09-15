@@ -152,7 +152,7 @@ input:focus, textarea:focus, button:focus {
 
 .calendar-inner {
     position: relative;
-    padding: 20px 15px 20px 15px;
+    padding: 20px 15px 50px 15px;
     float: left;
     width: 100%;
     max-width: calc(100% - 600px);
@@ -552,6 +552,8 @@ button.icon-button > span.chevron-arrow-right {
     }
     .sidebar-hide .calendar-inner {
         max-width: calc(100% - 380px);
+        padding-bottom: 50px;
+;
     }
     tr.calendar-header .calendar-header-day,
     tr.calendar-body .calendar-day {

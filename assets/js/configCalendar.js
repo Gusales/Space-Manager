@@ -17,7 +17,7 @@ $('#calendar').evoCalendar('addCalendarEvent', [
     {
         id: 'kNybja6',
         name: 'Mom\'s Birthday',
-        date: 'July 27, 2022',
+        date: 'September 27, 2022',
         type: 'birthday',
     },
     {

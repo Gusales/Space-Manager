@@ -1,4 +1,14 @@
 // PÁGINA DE PERFIL DO USUÁRIO
+// IMPLEMENTANDO API DO SPACE MANAGER
+const apiSM = async () => {
+    const responseSM = await fetch('https://space-manager-api.herokuapp.com/');
+
+    const data = await responseSM.json()
+
+    console.log(data);
+}
+apiSM();
+
 document.querySelector('.controllers').style.display = "none";
 
 document.querySelector('#saveButton').addEventListener('click', () => {
@@ -25,6 +35,7 @@ document.querySelector('.fa-xmark').addEventListener('click', () => {
     document.getElementById('emailID').value = "";
     document.getElementById('numID').value = "";
 })
+
 
 // USANDO JQUERY PRA DEIXAR OS INPUTS BONITINHOS
 $(document).ready(() => {

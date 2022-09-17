@@ -33,20 +33,21 @@
         </div>
     </div>
     <div class="profileContainer">
-            <h2 class="titleProfile">Cadastrar novo usuário</h2>
-            <form action="" method="post" class="formProfile">
-                <label for="Email">Nome completo:</label><br>
-                <input type="text" placeholder="Nome sobrenome" id="nomeProfile"><br>
-                <label for="Email">Email:</label><br>
-                <input type="email" placeholder="exemplo@exemplo.com" id="emailProfile"><br>
-                <label for="Email">Número de matrícula:</label><br>
-                <input type="number" placeholder="111" id="rmProfile"><br>
-                <label for="materia">Matéria(s):</label><br>
-                <input type="email" placeholder="Exemplo" id="matProfile"><i class="fa-solid fa-plus"
-                    alt="adicionar nova matéria"></i><br>
-                <label for="Numero">Telefone para Contato:</label><br>
-                <input type="tel" placeholder="(00) 0000-0000" id="numProfile"><br>
-
+      <form action="" method="post" class="formProfile">
+              <h2 class="titleProfile">Cadastrar novo usuário</h2>
+                <label for="Nome" class="labelNome">Nome completo:</label>
+                <input type="text" placeholder="Nome sobrenome" id="nomeProfile" name="Nome">
+                <label for="Email">Email:</label>
+                <input type="email" placeholder="exemplo@exemplo.com" id="emailProfile" name="Email1">
+                <label for="RM">Número de matrícula:</label>
+                <input type="number" placeholder="111" id="rmProfile" name="RM">
+                <label for="materia">Matéria(s):</label>
+                <input type="email" placeholder="Exemplo" id="matProfile" name="materia"><i class="fa-solid fa-plus"
+                    alt="adicionar nova matéria"></i>
+                <label for="Numero">Telefone para Contato:</label>
+                <input type="tel" placeholder="(00) 0000-0000" id="numProfile">
+                <label for="Numero">Senha <button class="btnPASS">Gerar senha automática</button></label>
+                <input type="tel" placeholder="(00) 0000-0000" id="numProfile">
                 <div class="controllers">
                   <button id="saveButton"><i class="fa-solid fa-floppy-disk"></i></button>
                 <button id="cancelButton"><i class="fa-solid fa-xmark"></i></button>
@@ -55,6 +56,7 @@
     </div>
 </section>
 </body>
+<script src="../js/main.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.inputmask/5.0.7/jquery.inputmask.min.js"></script>
 <script>

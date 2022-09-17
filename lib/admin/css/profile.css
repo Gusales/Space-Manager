@@ -14,6 +14,7 @@ input:disabled{
 }
 input {
     margin-bottom: 20px;
+    margin-top: 20px;
     width: 75%;
     height: 35px;
     background-color: white;
@@ -31,6 +32,16 @@ input:-webkit-autofill {
 input:-webkit-autofill {
     -webkit-text-fill-color: black !important;
 }
+.btnPASS{
+    border: none;
+    font-size: 15px;
+    background-color: transparent;
+    margin-left: 10px;
+    cursor: pointer;
+}
+.labelNome{
+    margin-top: 13px;
+}
 .profile {
     height: 100%;
     border-right: 1px solid rgb(121, 111, 111);
@@ -44,7 +55,7 @@ input:-webkit-autofill {
 
 .profileContainer {
     height: 100%;
-    margin-top: 20px;
+    margin-top: 13px;
 }
 
 .profileImg {
@@ -63,12 +74,12 @@ input:-webkit-autofill {
 }
 
 .formProfile {
+    margin-top: 20px;
     text-align: center;
     width: 100%;
     display: flex;
     flex-flow: column;
     align-items: center;
-    /* justify-content: center; */
 }
 
 .list {
@@ -87,12 +98,12 @@ p {
 .profile,
 .profileContainer {
     display: flex;
-    justify-content: center;
+    /* justify-content: center; */
 }
 .mainContainer {
     margin: 0 auto;
     margin-top: 100px;
-    height: 85%;
+    height: 88%;
     width: 80%;
     background-color: white;
     min-width: 400px;
@@ -112,8 +123,8 @@ p {
 }
 
 .titleProfile {
-    position: sticky;
-    height: 30px;
+    /* position: sticky; */
+    /* height: 30px; */
     text-align: center;
     width: 100%;
 }

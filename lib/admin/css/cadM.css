@@ -1,0 +1,115 @@
+.mainContainer{
+    margin: 0 auto;
+    margin-top: 100px;
+    width: 80%;
+    height: 70%;
+    border-radius: 13px;
+    background-color: #fff;
+    display: flex;
+    flex-flow: row;
+}
+.left{
+    border-right: 1px solid black;
+    width: 50%;
+    height: 100%;
+    display: flex;
+    flex-flow: column wrap;
+    align-items: center;
+}
+.right{
+    width: 50%;
+    height: 100%;
+    
+}
+.title{
+    display: flex;
+    flex-flow: column wrap;
+    width: 40%;
+    height: 35px;
+}
+.input{
+    width: 80%;
+    /* height: 50%; */
+    margin-top: 100px;
+    display: flex;
+    flex: 1 1 200px;
+    flex-direction: row;
+    flex-wrap: wrap;
+    /* border-right: 1px solid black; */
+}
+.curso, .turma, .materia{
+    display: flex;
+    flex-flow: column wrap;
+}
+.curso{
+    width: 70%;
+}
+.turma{
+    width: 30%;
+}
+#cursoInput, #turmasInput, #materiasInput{
+    width: 80%;
+    height: 30px;
+    border-radius: 5px;
+    border: none;
+    background-color: rgb(212, 204, 204);
+    outline: none;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+.materia{
+    margin-top: 100px;
+    display: flex;
+    align-items: center;
+}
+#materiasInput{
+    width: 45%;
+}
+option{
+    background-color: white;
+}
+i{
+    cursor: pointer;
+    color: #B70407;
+    font-size: 24px;
+}
+.is{
+    width: 100%;
+    height: 26px;
+    display: flex;
+    flex-flow: row wrap;
+    align-items: center;
+    justify-items: center;
+    margin: 0 auto;
+}
+.plusMat{
+    width: 100%;
+    height: 30px;
+    margin-top: 20px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    /* border: 1px solid #B70407; */
+}
+.fa-mat{
+    margin-top: -10px;
+    text-align: center;
+    
+}
+@media (max-width: 800px) {
+    .left{
+        border-right: none;
+    }
+    .mainContainer{
+        flex-flow: column;
+        height: 950px;
+        padding-bottom: 10px;
+    }
+    .left, .right{
+        width: 100%;
+    }
+    .left{
+        border-bottom: 1px solid slategrey;
+    }
+  }

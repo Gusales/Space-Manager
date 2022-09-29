@@ -1,7 +1,7 @@
 // PÁGINA DE PERFIL DO USUÁRIO
 // IMPLEMENTANDO API DO SPACE MANAGER
 const apiSM = async () => {
-    const responseSM = await fetch('https://space-manager-api.herokuapp.com/');
+    const responseSM = await fetch('http://192.168.0.17:1313/');
 
     const data = await responseSM.json()
 

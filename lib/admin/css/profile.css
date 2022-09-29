@@ -57,6 +57,9 @@ input:-webkit-autofill {
     height: 100%;
     margin-top: 13px;
 }
+.matteria{
+    width: 96%;
+}
 
 .profileImg {
     width: 200px;

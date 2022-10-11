@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Space Manager - Cadastro de novos usuários</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/cad-geral.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" />
+</head>
+
+<body onload="dinamic()">
+    <header>
+        <h1>Space Manager</h1>
+        <div class="profilePIC">
+            <a href="professores.html" class="profName">Professores Cadastrados</a>
+            <a href="../home.html" class="profName">Horários Reservados</a>
+            <button class="profName pAdm" onclick="openM()">
+                Painel de Administração
+            </button>
+        </div>
+        <div class="dropdownMenu">
+            <a href="professores.html" class="dropLink">Professores Cadastrados</a></li><br><br>
+            <a href="../home.html" class="dropLink">Horários Reservados</a><br>
+            <button class="exitDrop" onclick="quitDrop()">Sair</button>
+        </div>
+    </header>
+
+    <section class="mainContainer">
+
+        <section class="row row1">
+            <select name="select1" id="cursos">
+                <option value="curso1">Curso1</option>
+                <option value="curso2">Curso1</option>
+            </select>
+        </section>
+
+        <section class="row row2">
+            <select name="cursoSelecionado" id="cursoSelecionado">
+                <option value="tec">info</option>
+            </select>
+            <select name="horario" id="horario">
+                <option value="hora">hora</option>
+            </select>
+            <div class="conteudo horarioSelecionado">7:30 - 8:30</div>
+            <div></div>
+            <div></div>
+        </section>
+
+        <section class="row row3">
+            <div class="oculta"></div>
+            <select name="turma" id="turmas">
+                <option value="turma1">turma1</option>
+            </select>
+            <div class="conteudo turmaSelecionada">1</div>
+            <select name="materia" id="materia">
+                <option value="materia1">materia1</option>
+            </select>
+            <div class="conteudo materiaSelecionada">portugues</div>
+        </section>
+    </section>
+
+
+    <script src="../js/cad-geral-style.js"></script>
+</body>
+
+</html>

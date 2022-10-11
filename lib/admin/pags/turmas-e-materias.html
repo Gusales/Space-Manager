@@ -1,63 +1,69 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cadastrar Matérias e Cursos</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" />
-    <link rel="stylesheet" href="../css/style.css" />
-    <link rel="stylesheet" href="../css/cadM.css" />
 
-    
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cadastrar Matérias e Cursos</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" />
+  <link rel="stylesheet" href="../css/style.css" />
+  <link rel="stylesheet" href="../css/cadM.css" />
+
+
 
 </head>
+
 <body>
-    <header class="headerProfs">
-        <h1>Space Manager</h1>
-        <div class="profilePIC">
-          <a href="cadastro.html" class="profName">Cadastrar Professores</a>
-          <a href="../home.html" class="profName">Horários Reservados</a>
-          <button class="profName pAdm" onclick="openM()">
-            Painel de Administração
-          </button>
-        </div>
-        <div class="dropdownMenuProf">
-          <a href="cadastro.html" class="dropLink">Cadastrar Professores</a></li><br><br>
-          <a href="../home.html" class="dropLink">Horários Reservados</a><br>
-          <button class="exitDrop" onclick="quitDrop()">Sair</button>
-        </div>
-      </header>
+  <header class="headerProfs">
+    <h1>Space Manager</h1>
+    <div class="profilePIC">
+      <a href="cadastro.html" class="profName">Cadastrar Professores</a>
+      <a href="../home.html" class="profName">Horários Reservados</a>
+      <button class="profName pAdm" onclick="openM()">
+        Painel de Administração
+      </button>
+    </div>
+    <div class="dropdownMenuProf">
+      <a href="cadastro.html" class="dropLink">Cadastrar Professores</a></li><br><br>
+      <a href="../home.html" class="dropLink">Horários Reservados</a><br>
+      <button class="exitDrop" onclick="quitDrop()">Sair</button>
+    </div>
+  </header>
 
-      <section class="mainContainer">
-        <div class="left">
-            <div class="input">
-                <div class="curso">
-                    <label for="cursoInput">Adicionar Cursos</label>
-                    <input type="text" name="cursoInput" id="cursoInput">
-                </div>
-                <div class="turma">
-                    <label for="turmasInput"> Adicionar Turmas</label>
-                    <select name="turmasInput" id="turmasInput">
-                        <option value="" disabled selected>Turmas</option>
-                        <option value="1º ano">1º ano</option>
-                        <option value="2º ano">2º ano</option>
-                        <option value="3º ano">3º ano</option>
-                    </select>
-                </div>
-            </div>
-            <div class="is"><i class="fa-solid fa-plus"></i><i class="fa-solid fa-floppy-disk"></i></div>
-        </div>
-        <div class="right">
-            <div class="materia">
-                <label for="materiasInput">Adicionar Matérias</label>
-                <input type="text" name="materiasInput" id="materiasInput">
-            </div>
+  <section class="mainContainer">
+    <div class="col col1">
+      <div class="row">
+        <h2>Cursos</h2>
+        <input type="text" name="cursos" id="addCurso">
+        <span><i class="fa-sharp fa-solid fa-plus" onclick="addCurso()"></i></span>
+      </div>
+    </div>
+    <div class="col col2">
+      <div class="row">
+        <h2>Matérias</h2>
+        <input type="text" name="materia" id="addMateria">
+        <span><i class="fa-sharp fa-solid fa-plus" onclick="addMat()"></i></span>
+      </div>
+    </div>
+    <div class="col col3">
+      <div class="row">
+        <h2>Horário</h2>
+        <input type="text" name="horario" id="addHora">
+        <span><i class="fa-sharp fa-solid fa-plus" onclick="addHora()"></i></span>
+      </div>
+    </div>
+    <div class="col col4">
+      <div class="row">
+        <h2>Espaço</h2>
+        <input type="text" name="espaco" id="addSpace">
+        <span><i class="fa-sharp fa-solid fa-plus" onclick="addSpace()"></i></span>
+      </div>
+    </div>
+  </section>
 
-            <div class="plusMat"><span><i class="fa-solid fa-plus fa-mat"></i></span></div>
-        </div>
-      </section>
-
-      <script src="../js/main.js"></script>
+  <script src="../js/main.js"></script>
+  <script src="../js/createCurso.js"></script>
 </body>
+
 </html>

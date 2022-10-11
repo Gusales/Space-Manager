@@ -1,7 +1,7 @@
 * {
   margin: 0;
   padding: 0;
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 html,
@@ -27,27 +27,27 @@ header {
 }
 
 h1 {
-  font-size: clamp(2rem, 8vw, 2.5rem);
-  padding-left: 10px;
+  font-size: clamp(1.7rem, 10vw, 2.3rem);
   text-shadow: 3px 2.8px black;
   color: rgb(245, 248, 250);
 }
 i{
   padding:0;
 }
-.container {
-  height: clamp(50rem, 100%, 100rem);
+.containerMain {
   margin: 0 auto;
   display: flex;
-  align-items: center;
   justify-content: center;
+  align-items: center;
+  height: 100%;
+  width: 95%;
 }
 .a-header{
   padding-right: 10px;
 }
 
 
-/* ------------------------ NOVO HEADER ------------------------*/
+/* ------------------------ NOVO HEADER ------------------------ */
 .vVoltar{
   margin-right: 5px;
   display: flex;
@@ -94,10 +94,19 @@ i{
   .profPIC{
       margin-left: 5px;
   }
-  h1{
-      font-size: 30px;
-  }
   .pAdm{
       display: block;
+  }
+}
+
+@media (max-width: 600px) {
+  .container{
+    height: 100%;
+  }
+}
+
+@media screen and (max-height: 720px){
+  .containerMain{
+    height: 775px;
   }
 }

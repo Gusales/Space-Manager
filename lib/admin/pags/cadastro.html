@@ -2,15 +2,18 @@
 <html lang="pt-br">
 
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Space Manager - Cadastro de novos usuários</title>
-    <link rel="stylesheet" href="../css/style.css">
-    <link rel="stylesheet" href="../css/profile.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" />
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Space Manager - Cadastro de novos usuários</title>
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="../css/profile.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" />
 </head>
-<header>
+
+<body onload="dinamic()">
+
+  <header>
     <h1>Space Manager</h1>
     <div class="profilePIC">
       <a href="professores.html" class="profName">Professores Cadastrados</a>
@@ -25,45 +28,57 @@
       <button class="exitDrop" onclick="quitDrop()">Sair</button>
     </div>
   </header>
-<section class="mainContainer">
+
+  <form action="http://192.168.0.16:1313/uploadimg" enctype="multipart/form-data" class="mainContainer">
+
     <div class="profile">
-        <div>
-            <img src="../img/userPhoto.png" alt="Imagem de perfil" class="profileImg"><br>
-        <a href="" class="addFotoProf">Adicionar Foto do Professor</a>
-        </div>
+      <div>
+        <label for="profIMG" class="addFotoProf">
+        <span><img src="../img/userPhoto.png" alt="Imagem de perfil" class="profileImg"></span>
+          <h5>Adicionar Foto do Professor</h5>
+          <input type="file" accept="image/*" name="imagem" id="profIMG" class="inputPic">
+      </label>
+      </div>
     </div>
+
     <div class="profileContainer">
       <div class="formProfile">
-              <h2 class="titleProfile">Cadastrar novo usuário</h2>
-                <label for="Nome" class="labelNome">Nome completo:</label>
-                <input type="text" placeholder="Nome sobrenome" id="nomeProfile" name="Nome" required>
-                <label for="Email">Email:</label>
-                <input type="email" placeholder="exemplo@exemplo.com" id="emailProfile" name="Email1" required>
-                <label for="RM">Número de matrícula:</label>
-                <input type="number" placeholder="111" id="rmProfile" name="RM" required>
-                <label for="materia">Matéria(s):</label>
-                <div class="matteria"><input type="email" placeholder="Exemplo" id="matProfile" name="materia"><i class="fa-solid fa-plus"
-                  alt="adicionar nova matéria"></i></div>
-                <label for="Numero">Telefone para Contato:</label>
-                <input type="tel" placeholder="(00) 0000-0000" id="numProfile">
-                <label for="Numero">Senha <p class="btnPASS" onclick="gerarPass()">Gerar senha automática</p></label>
-                <input type="text" placeholder="" id="passGen" required>
-                <div class="controllers">
-                  <button id="saveButton" onclick="cadUser()"><i class="fa-solid fa-floppy-disk"></i></button>
-                <button id="cancelButton"><i class="fa-solid fa-xmark"></i></button>
-                </div>
-              </div>
+        <h2 class="titleProfile">Cadastrar novo usuário</h2>
+        <label for="Nome" class="labelNome">Nome completo:</label>
+        <input type="text" placeholder="Nome sobrenome" id="nomeProfile" name="Nome" required>
+        <label for="Email">Email:</label>
+        <input type="email" placeholder="exemplo@exemplo.com" id="emailProfile" name="Email1" required>
+        <label for="RM">Número de matrícula:</label>
+        <input type="number" placeholder="111" id="rmProfile" name="RM" required>
+        <label for="materia">Matéria(s):</label>
+        <div class="matteria">
+          <select type="email" placeholder="Exemplo" id="matProfile" name="materia" class="optionStyle">
+            <option value="Exemplo" disabled selected style="display: none;">Exemplo</option>
+          </select>
+          <i class="fa-solid fa-plus" alt="adicionar nova matéria"></i>
+        </div>
+        <label for="Numero">Telefone para Contato:</label>
+        <input type="tel" placeholder="(00) 0000-0000" id="numProfile">
+        <label for="Numero">Senha <p class="btnPASS" onclick="gerarPass()">Gerar senha automática</p></label>
+        <input type="text" placeholder="" id="passGen" required>
+        <div class="controllers">
+          <button id="saveButton" onclick="cadUser()"><i class="fa-solid fa-floppy-disk"></i></button>
+          <button id="cancelButton"><i class="fa-solid fa-xmark"></i></button>
+        </div>
+      </div>
     </div>
-</section>
+
+  </form>
 </body>
-<script src="../js/main.js"></script>
-<script src="../js/createUser.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.inputmask/5.0.7/jquery.inputmask.min.js"></script>
+<script src="https://compressjs.herokuapp.com/compress.js"></script>
+<script src="../js/main.js"></script>
+<script src="../js/createUser.js"></script>
 <script>
   $(document).ready(() => {
-  $('#numProfile').inputmask('(99)99999-9999')
-});
+    $('#numProfile').inputmask('(99)99999-9999')
+  });
 </script>
-<script src="../js/main.js"></script>
+
 </html>

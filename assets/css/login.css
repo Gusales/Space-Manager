@@ -54,11 +54,11 @@ header{
   margin: 0 auto;
   top: 50%;
 }
-.container {
+.containerMain {
   height: clamp(42rem, 100%, 100rem);
 }
 
-.container h2 {
+.containerMain h2 {
   width: 60%;
   margin: 0 auto;
   color: #e21d1d;
@@ -67,7 +67,7 @@ header{
   padding-top: 25px;
 }
 
-.container form {
+.containerMain form {
   padding: 0 40px;
 }
 

@@ -1,0 +1,58 @@
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+select,
+div {
+  width: 13%;
+  height: 40px;
+  border-radius: 7px;
+  margin: 5px;
+}
+/* select,
+div,
+.conteudo {
+  display: none;
+} */
+select {
+  background-color: #dbcfcf;
+  border: 1px solid black;
+}
+div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#cursos {
+  display: block;
+}
+.mainContainer {
+  width: 90%;
+  height: 75%;
+  background-color: #fff;
+  border-radius: 13px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  /* justify-content: center; */
+  margin-top: 20px;
+}
+.row {
+  width: calc(85% - 40px);
+  height: 100px;
+  /* border: 1px solid red; */
+  margin-left: 20px;
+  margin-right: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.conteudo {
+  background-color: #dbcfcf;
+  border: 1px solid black;
+}
+.row1 {
+  margin-top: 20px;
+}

@@ -1,8 +1,5 @@
-// PÁGINA DE PERFIL DO USUÁRIO
-// IMPLEMENTANDO API DO SPACE MANAGER
 const authen = async () => {
-  const token = localStorage.getItem("thistoken");
-  console.log("This is Token" + token);
+  const token = sessionStorage.getItem("thistoken");
   const init = {
     method: "GET",
     headers: {
@@ -10,34 +7,45 @@ const authen = async () => {
       "x-acess-token": token,
     },
   };
-  const responseSM = await fetch("http://192.168.0.16:1313/", init);
+  const responseSM = await fetch("http://192.168.0.16:1313/authen", init);
   const data = await responseSM.json();
-  console.log(data);
 
   if (data.mensage == 'Token válido') {
     const urlParams = new URLSearchParams(window.location.search);
     const idParam = urlParams.get('user')
 
-    const log = {
-      "id": idParam,
+    if (data.userID != idParam) {
+      console.table({
+        'data.userID': data.userID,
+        'idParam': idParam
+      })
+
+
+      console.log("Usuário não autorizado")
+    }
+    else {
+      const log = {
+        "id": idParam,
+      };
+      const ninit = {
+      method: "POST",
+      headers: {
+        "content-type": "application/json",
+        },
+      body: JSON.stringify(log)
     };
-    const init = {
-    method: "POST",
-    headers: {
-      "content-type": "application/json",
-      },
-    body: JSON.stringify(log)
-  };
-  const searchFromID = await fetch("http://192.168.0.16:1313/getUser", init);
-    const idData = await searchFromID.json();
-    
-    document.getElementById("exampleModalLabel").textContent = idData.namecCad
+    const searchFromID = await fetch("http://192.168.0.16:1313/getUser", ninit);
+      const idData = await searchFromID.json();
+      
+      document.getElementById("exampleModalLabel").textContent = idData.namecCad
+    }
   }
   else {
     alert('Você não tem permissão para está aqui!')
-    location.href = '../../index.html'
+    location.href = 'http://localhost/Space-Manager/index.html'
   }
 };
+authen();
 
 document.querySelector(".controllers").style.display = "none";
 

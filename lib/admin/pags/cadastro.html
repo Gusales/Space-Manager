@@ -9,6 +9,7 @@
   <link rel="stylesheet" href="../css/style.css">
   <link rel="stylesheet" href="../css/profile.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" />
+  <link rel="shortcut icon" href="../favicon.ico" type="image/x-icon">
 </head>
 
 <body onload="dinamic()">
@@ -29,20 +30,7 @@
     </div>
   </header>
 
-  <form action="http://192.168.0.16:1313/uploadimg" enctype="multipart/form-data" class="mainContainer">
-
-    <div class="profile">
-      <div>
-        <label for="profIMG" class="addFotoProf">
-        <span><img src="../img/userPhoto.png" alt="Imagem de perfil" class="profileImg"></span>
-          <h5>Adicionar Foto do Professor</h5>
-          <input type="file" accept="image/*" name="imagem" id="profIMG" class="inputPic">
-      </label>
-      </div>
-    </div>
-
-    <div class="profileContainer">
-      <div class="formProfile">
+  <form class="mainContainer">
         <h2 class="titleProfile">Cadastrar novo usuário</h2>
         <label for="Nome" class="labelNome">Nome completo:</label>
         <input type="text" placeholder="Nome sobrenome" id="nomeProfile" name="Nome" required>
@@ -65,15 +53,13 @@
           <button id="saveButton" onclick="cadUser()"><i class="fa-solid fa-floppy-disk"></i></button>
           <button id="cancelButton"><i class="fa-solid fa-xmark"></i></button>
         </div>
-      </div>
-    </div>
 
   </form>
 </body>
+<script src="../js/main.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.inputmask/5.0.7/jquery.inputmask.min.js"></script>
 <script src="https://compressjs.herokuapp.com/compress.js"></script>
-<script src="../js/main.js"></script>
 <script src="../js/createUser.js"></script>
 <script>
   $(document).ready(() => {

@@ -9,8 +9,11 @@ let dicio = {
 };
 
 // CAPTCHA SYSTEM!!
-var allV = ["A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z","0","1","2","3","4","5","6","7","8","9",];
+var allV = ["A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z","0","1","2","3","4","5","6","7","8","9",
+];
 const loadCap = async () => {
+  sessionStorage.removeItem("thistoken");
+  sessionStorage.removeItem("Usuário");
   iptLog.value = "";
   iptPass.value = "";
   var cVAl1 = allV[Math.floor(Math.random() * allV.length)];
@@ -51,28 +54,14 @@ const login = async () => {
     console.log(data);
 
     if (data.mensage == "Acesso autorizado") {
-      localStorage.setItem("thistoken", data.token);
-      const userINFO = {
-        nome: data.user.namecCad,
-        rm: data.user.rmCad,
-        img: data.user.imgCad,
-        email: data.user.emailCad,
-        telefone: data.user.teleCad,
-      };
-      const dataUser = ["nome", "rm", "img", "email", "telefone"];
-      for (let index = 0; index < 5; index++) {
-        document.cookie =
-          `${dataUser[index]} = ` + `${userINFO[dataUser[index]]}; path=/`;
-      }
-      let dados = document.cookie;
-      console.table(dados);
+      sessionStorage.setItem("thistoken", data.token);
+      sessionStorage.setItem("Usuário", data.idUser);
       if (iptLog.value == dicio.admin || iptLog.value == dicio.dev) {
-        // LOOP DE REPETIÇÃO AQUI?
-        // location.href = './lib/admin/home.html'
-        console.log(data);
+        location.href = "./lib/admin/home.html";
       } else {
-        location.href = `./assets/html/calendar.html?user=${data.user.idCad}`;
+        location.href = `./assets/html/calendar.html?user=${data.idUser}`;
       }
+    } else {
     }
   }
 };

@@ -1,29 +1,33 @@
-::placeholder {
-  color: rgb(74, 71, 71);
+h2{
+  color: red;
+  text-align: center;
+  text-shadow: none;
+  margin-bottom: 10px;
 }
-
-hr {
-  margin-top: 40px;
-  margin-bottom: 40px;
-  width: 90%;
-  margin-left: 45px;
+body{
+  display: flex;
+  flex-flow: row;
+  align-items: center;
+  justify-content: center;
 }
-input:disabled {
-  border: none;
-  background-color: white;
+label{
+  width: 100%;
+  text-align: center;
+  font-size: 17px;
 }
 input,
 select {
-  margin-bottom: 20px;
-  margin-top: 20px;
+  margin-bottom: 10px;
+  margin-top: 10px;
   width: 75%;
-  height: 35px;
+  height: 25px;
   background-color: white;
   border: 2px solid #e01313;
   text-align: center;
   border-radius: 10px;
   outline: none;
   font-size: 1.05em;
+  -webkit-appearance: none !important;
 }
 input:-webkit-autofill {
   box-shadow: none;
@@ -33,116 +37,68 @@ input:-webkit-autofill {
 input:-webkit-autofill {
   -webkit-text-fill-color: black !important;
 }
-.inputPic {
-  border: none;
-  text-align: center;
-  display: none;
+input:hover{
+  -webkit-appearance: none !important;
 }
-.btnPASS {
-  border: none;
+p{
+  cursor: pointer;
   font-size: 15px;
-  background-color: transparent;
-  margin-left: 10px;
+}
+p:hover{
+  text-decoration: underline;
+}
+
+
+
+.mainContainer{
+  width: 40%;
+  height: calc(auto - 10px);
+  background-color: white;
+
+  padding: 20px;
+  
+  margin-top: 70px;
+
+  border-radius: 13px;
+
+  display: flex;
+  flex-flow: row wrap;
+  align-items: center;
+  justify-content: center;
+}
+.controllers{
+  margin-top: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 30px;
+}
+.matteria{
+  width: 75%;
+  height: 25px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border: 2px solid #e01313;
+  margin-bottom: 10px;
+  border-radius: 10px;
+}
+.matteria select{
+  border: none;
+  width: 95%;
   cursor: pointer;
 }
-.labelNome {
-  margin-top: 13px;
+.matteria i {
+  margin-right: 5px;
 }
-.profile {
-  height: 100%;
-  border-right: 1px solid rgb(121, 111, 111);
-  display: flex;
-  flex-flow: column;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-}
-
-.profileContainer {
-  height: 100%;
-  margin-top: 13px;
-}
-.matteria {
-  width: 96%;
-}
-
-.profileImg {
-  width: 200px;
-  height: 200px;
-  margin-top: 20px;
-}
-
-.profileName {
-  text-shadow: none;
-  font-size: 40px;
-}
-
-.profileNum {
-  font-size: 24px;
-}
-
-.formProfile {
-  margin-top: 20px;
-  text-align: center;
-  width: 100%;
-  display: flex;
-  flex-flow: column;
-  align-items: center;
-}
-
-.list {
-  width: 40%;
-  font-size: 20px;
-  text-align: center;
-  margin-left: 13px;
-  margin-top: 20px;
-  display: inline-block;
-}
-
-p {
-  display: inline;
-}
-
-.profile,
-.profileContainer {
-  display: flex;
-  /* justify-content: center; */
-}
-.mainContainer {
-  margin: 0 auto;
-  margin-top: 100px;
-  height: 88%;
-  width: 80%;
-  background-color: white;
-  min-width: 400px;
-  display: flex;
-  justify-content: center;
-  border-radius: 13px;
-}
-.mainContainer > div {
-  flex: 1 1 200px;
-  flex-direction: row;
-  flex-wrap: wrap;
-}
-.profileName,
-.profileNum {
-  text-align: center;
-  margin: 0 auto;
-}
-
-.titleProfile {
-  /* position: sticky; */
-  /* height: 30px; */
-  text-align: center;
-  width: 100%;
-}
-
 #cancelButton {
   background-color: #d36c6c;
   width: 35px;
   height: 35px;
   border: none;
   cursor: pointer;
+  margin-left: 5px;
 }
 
 #saveButton {
@@ -157,43 +113,8 @@ p {
 #cancelButton:hover {
   border-radius: 20%;
 }
-.fa-plus {
-  cursor: pointer;
-  margin-left: 5px;
-  font-size: 13px;
-}
-.addFotoProf {
-  text-decoration: none;
-  width: 200px;
-  height: 100%;
-  color: #b70407;
-  font-size: 21px;
-
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  justify-content: center;
-
-  border: 1px solid green;
-}
-.addFotoProf > span, .addFotoProf > h5{
-    cursor: pointer;
-}
-h5{
-    font-weight: normal;
-}
-/* @media (max-width: 750px) {
-    ::placeholder {
-        font-size: 0.7em;
-    }
-  } */
 @media (max-width: 800px) {
-  .profile {
-    border: none;
-  }
-  .mainContainer {
-    flex-flow: column;
-    height: auto;
-    padding-bottom: 10px;
+  .mainContainer{
+    width: 80%;
   }
 }

@@ -1,129 +1,223 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Space Manager</title>
+    <link rel="icon" type="image/x-icon" href="../img/favicon.ico" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="../css/style.css" />
+    <link rel="stylesheet" href="../css/modal.css" />
+    <link rel="stylesheet" href="../css/modalUser.css" />
+    <link rel="stylesheet" href="../css/reservar.css" />
 
-<head>
-  <meta charset="UTF-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Space Manager</title>
-  <link rel="icon" type="image/x-icon" href="../img/favicon.ico" />
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet"
-    integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous" />
-  <link rel="stylesheet" href="../css/style.css" />
-  <link rel="stylesheet" href="../css/modalUser.css" />
-  <link rel="stylesheet" href="../css/modal.css" />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="../../lib/calendar/css/evo-calendar.css"
+    />
+  </head>
 
-  <link rel="stylesheet" type="text/css" href="../../lib/calendar/css/evo-calendar.css" />
-</head>
+  <body onload="authen()">
+    <header>
+      <h1>Space Manager</h1>
+      <div class="profilePIC">
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="modal"
+          data-bs-target="#userModal"
+        >
+          <img
+            src="../img/userImgWhite.png"
+            alt="Foto de Perfil do Professor"
+            srcset=""
+            class="profPIC"
+          />
+        </button>
+      </div>
+    </header>
 
-<body onload="authen()">
-  <header>
-    <h1>Space Manager</h1>
-    <div class="profilePIC">
-      <button class="navbar-toggler" type="button" data-bs-toggle="modal" data-bs-target="#exampleModal">
-        <img src="../img/userPhoto.png" alt="Foto de Perfil do Professor" srcset="" class="profPIC" />
-    </button>
-    </div>
-  </header>
+    <!-- MODAL DO PERFIL!!!!!!!!!!!! AJUDA OS AMIGUINHO PROGRAMADOR AI GERSON ORGANIZANDO O CÓDIGO PRA NÃO SE PERDER!!!!!!!!!!!!!!!!!-->
+    <div
+      class="modal fade"
+      id="userModal"
+      tabindex="-1"
+      aria-labelledby="userModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog modal-fullscreen">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h2 class="modal-title" id="userModalLabel"><b>Perfil</b></h2>
+            <button
+              type="button"
+              class="btn-close btn-close-white"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="modal-body">
+            
+            <img
+              id="userProfilePic"
+              src="../img/userImgWhite.png"
+              alt="userImg"
+              class="imgProfileUserDiv"
+            />
 
-  <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog modal-fullscreen">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h2 class="modal-title" id="exampleModalLabel"><b>Navegação</b></h2>
-          <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
-        </div>
-        <div class="modal-body">
-          <h3><b>Leia Antes:</b></h3>
-          <p>
-            <a id="atual" href="#" class="link link-light">Introdução</a>
-            <a href="listagem.html" class="link link-light">Listagem</a>
-          </p>
-          <h3><b>Animes:</b></h3>
-          <p>
-            <a href="animes/anime1Dn.html" class="link link-light">Death Note</a>
-            <a href="animes/anime2Fa.html" class="link link-light">Fullmetal Alchemist</a>
-            <a href="animes/anime3Jk.html" class="link link-light">Jujutsu Kaisen</a>
-            <a href="animes/anime4Ky.html" class="link link-light">Kimetsu no Yaiba</a>
-            <a href="animes/anime5Mn.html" class="link link-light">Mirai Nikki</a>
-            <a href="animes/anime6Nt.html" class="link link-light">Nanatsu no Taizai</a>
-            <a href="animes/anime7Ns.html" class="link link-light">Naruto</a>
-            <a href="animes/anime8Opm.html" class="link link-light">One Punch-Man</a>
-            <a href="animes/anime9Bg.html" class="link link-light">Seishun Buta Yarō wa Bunny Girl Senpai no Yume o
-              Minai</a>
-            <a href="animes/anime10Tg.html" class="link link-light">Tokyo Ghoul</a>
-          </p>
+            <h3><b>Sobre:</b></h3>
+            <div class="informacoesUser">
+              <p id="userName">$NomeUser</p>
+              <p id="userRM">$RM</p>
+              <p id="userTell">$Telefone</p>
+              <p id="userEmail">$Email</p>
+              <div class="changePasswordDiv">
+                <button class="changePass">Mudar Senha</button>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </div>
-  </div>
 
-  <div class="modal-containerSM">
-    <div class="modalSM">
-      <h2 class="h2Modal">Nova Reserva de Espaço</h2>
-      <form action="" method="get">
-        <div class="selects">
-          <div class="btn-group">
-            <button type="button" class="btn btn-danger dropdown-toggle spaceSM" data-bs-toggle="dropdown"
-              aria-expanded="false">
-              Espaço
-            </button>
-            <ul class="dropdown-menu">
-              <li>
-                <a class="dropdown-item space1" href="#" id="r" onclick="modES(1)">Exemplo</a>
-              </li>
-            </ul>
+      <!-- MODAL DA RESERVA!!!!!!!!!!!! AJUDA OS AMIGUINHO PROGRAMADOR AI GERSON ORGANIZANDO O CÓDIGO PRA NÃO SE PERDER!!!!!!!!!!!!!!!!!-->
+
+
+    <div
+      class="modal fade"
+      id="reserveModal"
+      tabindex="-1"
+      aria-labelledby="reserveModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog modal-fullscreen">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h2 class="modal-title" id="reserveModalLabel"><b>Reservar</b></h2>
+            <button
+              type="button"
+              class="btn-close btn-close-white"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
           </div>
-          <div class="btn-group">
-            <button type="button" class="btn btn-danger dropdown-toggle horarioSM" data-bs-toggle="dropdown"
-              aria-expanded="false">
-              Horário
-            </button>
-            <ul class="dropdown-menu">
-              <li>
-                <a class="dropdown-item hItemSM1" href="#" id="r" onclick="modHS(1)">Exemplo</a>
-              </li>
-            </ul>
-          </div>
-          <div class="btn-group">
-            <button type="button" class="btn btn-danger dropdown-toggle materiaSM" data-bs-toggle="dropdown"
-              aria-expanded="false">
-              Matéria
-            </button>
-            <ul class="dropdown-menu">
-              <li>
-                <a class="dropdown-item matSM1" href="#" id="r" onclick="modMS(1)">Exemplo</a>
-              </li>
-            </ul>
+          <div class="modal-body-reserve">
+            <div class="inputEspaco">
+              <select name="espaco" id="space" onchange="carregar1()">
+                <option value="espaco" class="disabledOption" disabled selected>
+                  Espaços
+                </option>
+              </select>
+            </div>
+
+            <div class="horarios">
+              <div class="de">
+                <div class="btn-group horario1">
+                  <h4>De:</h4>
+                  <button
+                    type="button"
+                    class="btn btn-danger dropdown-toggle horarioSM"
+                    data-bs-toggle="dropdown"
+                    aria-expanded="false"
+                    onchange="carregar2()"
+                  >
+                    Horário
+                  </button>
+                  <ul class="dropdown-menu">
+                    <li class="forDropHora"></li>
+                  </ul>
+                </div>
+              </div>
+
+              <div class="ate">
+                <div class="btn-group horario2">
+                  <h4>Até:</h4>
+                  <button
+                    type="button"
+                    class="btn btn-danger dropdown-toggle horarioSM2"
+                    data-bs-toggle="dropdown"
+                    aria-expanded="false"
+                  >
+                    Horário
+                  </button>
+                  <ul class="dropdown-menu">
+                    <li class="forDropHora2"></li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+
+            <div class="btn-group materia">
+              <h4>Matéria:</h4>
+              <button
+                type="button"
+                class="btn btn-danger dropdown-toggle materiaSM"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
+              >
+                Matéria
+              </button>
+              <ul class="dropdown-menu">
+                <li class="forDropMat"></li>
+              </ul>
+            </div>
+
+            <div class="inputTurma">
+              <select name="turma" id="turma">
+                <option value="turma" disabled selected>Turma</option>
+              </select>
+            </div>
+
+            <h3 class="h3Modal">Descrição da Reserva</h3>
+            <textarea name="" id="descri" cols="30" rows="3"></textarea>
+            <div class="controls">
+              <button class="btnModal btnR" onclick="saveRes()">Reservar</button
+              ><button class="btnModal btnC" onclick="closeModal()">
+                Cancelar
+              </button>
+            </div>
           </div>
         </div>
-        <h3 class="h3Modal">Descrição da Reserva</h3>
-
-        <textarea name="" id="" cols="30" rows="10"></textarea>
-        <div class="controls">
-          <button class="btnModal btnR">Reservar</button><button class="btnModal btnC" onclick="closeModal()">
-            Cancelar
-          </button>
-        </div>
-      </form>
+      </div>
     </div>
-  </div>
 
-  <div class="containerMain">
-    <div id="calendar"></div>
-  </div>
+    <div class="containerMain">
+      <div id="calendar"></div>
+    </div>
 
-  <script src="../../lib/calendar/js/evo-calendar.min.js"></script>
-  <script src="../../lib/calendar/js/evo-calendar.js"></script>
-  <script src="../js/configCalendar.js"></script>
-  <script src="../js/modal.js"></script>
-  <script src="../js/main.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.5/dist/umd/popper.min.js"
-    integrity="sha384-Xe+8cL9oJa6tN/veChSP7q+mnSPaj5Bcu9mPX5F5xIGE0DVittaqT5lorf0EI7Vk"
-    crossorigin="anonymous"></script>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.min.js"
-    integrity="sha384-ODmDIVzN+pFdexxHEHFBQH3/9/vQ9uori45z4JjnFsRydbmQbmL5t1tQ0culUzyK"
-    crossorigin="anonymous"></script>
-</body>
-
+    <script>
+      const img = document.getElementById("userProfilePic");
+      const src = img.getAttribute("src");
+      if (src == "../img/userImgWhite.png") {
+        document.getElementById("userProfilePic").style =
+          "border: none; border-radius: 50%;";
+      }
+    </script>
+    <script src="../../lib/calendar/js/evo-calendar.min.js"></script>
+    <script src="../../lib/calendar/js/evo-calendar.js"></script>
+    <script src="../js/configCalendar.js"></script>
+    <script src="../js/modal.js"></script>
+    <script src="../js/main.js"></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.5/dist/umd/popper.min.js"
+      integrity="sha384-Xe+8cL9oJa6tN/veChSP7q+mnSPaj5Bcu9mPX5F5xIGE0DVittaqT5lorf0EI7Vk"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.min.js"
+      integrity="sha384-ODmDIVzN+pFdexxHEHFBQH3/9/vQ9uori45z4JjnFsRydbmQbmL5t1tQ0culUzyK"
+      crossorigin="anonymous"
+    ></script>
+  </body>
 </html>
+
+
+<!--       <div class="loading"><div class="lds-ellipsis"><div></div><div></div><div></div><div></div></div></div>
+ -->

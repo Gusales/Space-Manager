@@ -52,10 +52,11 @@ input {
 }
 
 table {
-    width: 100%;
+    width: 60%;
     table-layout: fixed;
     min-width: 900px;
     border-collapse: collapse;
+    background-color: whi;
 }
 
 thead th {
@@ -105,11 +106,11 @@ tr:hover td {
     box-shadow: inset 6px 6px 6px #B70407;
 }
 
-.mainContainer {
+/* .mainContainer {
     height: 84vh;
     min-width: 900px;
     border-radius: 13px 13px 13px 13px;
-}
+} */
 
 .table {
     padding-top: 2%;
@@ -119,3 +120,53 @@ tr:hover td {
     color: black;
     text-shadow: none;
 }
+
+/* TELA DO MOBILE */
+.mobileC{
+    display: none;
+    background-color: white;
+    width: 80%;
+    min-width: 350px;
+
+    margin: 0 auto;
+    margin-top: 80px;
+    padding: 10px 20px 10px 20px;
+
+    border-radius: 13px;
+}
+.headerM{
+    margin: 0 auto;
+    margin-top: 80px;
+    width: 80%;
+    height: 30px;
+    background-color: white;
+}
+.list-group {
+    margin: 0 auto;
+
+    width: 80%;
+
+    text-align: center;
+}
+.h1M{
+    font-size: 20px;
+    text-align: center;
+    text-shadow: none;
+    color: black;
+}
+.list-group-item{
+    cursor: pointer;
+    border-radius: 7px;
+}
+.list-group-item:hover{
+    background-color: #e01313;
+    color: white;
+}
+@media (max-width: 750px) {
+    .mobileC{
+        display: block;
+    }
+    .mainContainer{
+        display: none;
+    }
+  }

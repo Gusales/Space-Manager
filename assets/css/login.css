@@ -11,7 +11,11 @@ form {
 header{
   justify-content: center;
 }
-
+button{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 #recap {
   padding-left: 15px;
 }

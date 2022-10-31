@@ -52,7 +52,7 @@ p:hover{
 
 .mainContainer{
   width: 40%;
-  height: calc(auto - 10px);
+  height: calc(auto + 20px);
   background-color: white;
 
   padding: 20px;

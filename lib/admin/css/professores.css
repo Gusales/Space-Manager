@@ -1,3 +1,7 @@
+body{
+    height: calc(100vh - 100px);
+}
+
 .headerProfs{
     height: 70px;
 }
@@ -46,8 +50,14 @@ cursor: auto;
     padding: 10px;
     cursor: pointer;
 }
+.fa-bars{
+    font-size: 30px;
+    padding: 0;
+
+}
 .fa-user-plus{
     color: #e01313;
+    text-shadow: none;
 }
 .fa-user-pen{
     color: rgb(27, 201, 94);

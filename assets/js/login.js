@@ -27,6 +27,7 @@ const loadCap = async () => {
 };
 
 const login = async () => {
+
   if (iptCap.value.toUpperCase() == "") {
     alert("Captcha Não preenchido!");
     captchaV = "";
@@ -37,6 +38,9 @@ const login = async () => {
     captchaV = "";
     loadCap();
   } else {
+    const loading = document.querySelector("button")
+    loading.innerHTML = `<div class="lds-ellipsis"><div></div><div></div><div></div><div></div></div>`
+    
     const log = {
       rm: iptLog.value,
       senha: iptPass.value,
@@ -49,7 +53,7 @@ const login = async () => {
       body: JSON.stringify(log),
     };
 
-    const responseSM = await fetch("http://192.168.0.16:1313/login", init);
+    const responseSM = await fetch("https://space-manager-api.herokuapp.com/login", init);
     const data = await responseSM.json();
     console.log(data);
 
@@ -57,14 +61,13 @@ const login = async () => {
       sessionStorage.setItem("thistoken", data.token);
       sessionStorage.setItem("Usuário", data.idUser);
       if (iptLog.value == dicio.admin || iptLog.value == dicio.dev) {
-        location.href = "./lib/admin/home.html";
+        location.href = "./lib/admin/";
       } else {
         location.href = `./assets/html/calendar.html?user=${data.idUser}`;
       }
     } else {
+      alert(data.mensage)
     }
+    loading.innerHTML = `Login`
   }
 };
-function redirectLogin() {
-  location.href = "../index.html";
-}

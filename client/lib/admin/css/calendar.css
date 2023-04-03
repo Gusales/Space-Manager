@@ -1,0 +1,24 @@
+.containerMonth{
+    display: flex;
+    justify-content: space-between;
+    padding: 25px;
+}
+
+.containerDays{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+
+.calendarDay{
+    width: calc(100% / 7);
+    height: 25px;
+    display: inline-block;
+}
+
+.calendarDay:hover{
+    cursor: pointer;
+    text-decoration: none;
+    color: #666;
+    background: #e1e1e1;
+}

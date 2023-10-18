@@ -23,68 +23,70 @@ app.use(bodyParser.json());
 // ============================ SISTEMA DE LOGIN BASE ============================
 
 app.post("/authen", async (req, res) => {
-  const idForUser = req.body.idUser;
-  const token = req.headers["x-acess-token"];
-  const user = await Prof.findOne({
-    where: {
-      idCad: idForUser,
-    },
-  });
-  jwt.verify(token, SECRET, (err, decoded) => {
-    if (err) {
-      res.send({
-        mensage: "Token inválido",
-      });
-    } else {
-      if (idForUser == decoded.userID) {
-        res.send({
-          mensage: "Token válido",
-          userID: decoded.userID,
-          type: user.typeCad,
-        });
-      } else {
-        res.send({
-          mensage: "Token inválido",
-        });
-      }
-    }
-  });
+  // const idForUser = req.body.idUser;
+  // const token = req.headers["x-acess-token"];
+  // const user = await Prof.findOne({
+  //   where: {
+  //     idCad: idForUser,
+  //   },
+  // });
+  // jwt.verify(token, SECRET, (err, decoded) => {
+  //   if (err) {
+  //     res.send({
+  //       mensage: "Token inválido",
+  //     });
+  //   } else {
+  //     if (idForUser == decoded.userID) {
+  //       res.send({
+  //         mensage: "Token válido",
+  //         userID: decoded.userID,
+  //         type: user.typeCad,
+  //       });
+  //     } else {
+  //       res.send({
+  //         mensage: "Token inválido",
+  //       });
+  //     }
+  //   }
+  // });
+
+  console.log('bateu aqui')
 });
 
 app.post("/login", async (req, res) => {
-  await bd.sync();
-  const { rm, senha } = req.body;
+  // await bd.sync();
+  // const { rm, senha } = req.body;
 
-  const user = await Prof.findOne({
-    where: {
-      rmCad: rm,
-    },
-  });
+  // const user = await Prof.findOne({
+  //   where: {
+  //     rmCad: rm,
+  //   },
+  // });
 
-  if (user === null) {
-  } else {
-    bcrypt.compare(senha, user.seCad, (err, data) => {
-      if (err) throw err;
-      if (data) {
-        const token = jwt.sign({ userID: user.idCad }, SECRET, {
-          expiresIn: 3600,
-        });
-        res.send({
-          mensage: "Acesso autorizado",
-          auth: true,
-          token: token,
-          idUser: user.idCad,
-          type: user.typeCad,
-          status: user.stateCad,
-        });
-      } else {
-        res.send({
-          mensage: "Acesso negado - Senha incorreta",
-          auth: false,
-        });
-      }
-    });
-  }
+  // if (user === null) {
+  // } else {
+  //   bcrypt.compare(senha, user.seCad, (err, data) => {
+  //     if (err) throw err;
+  //     if (data) {
+  //       const token = jwt.sign({ userID: user.idCad }, SECRET, {
+  //         expiresIn: 3600,
+  //       });
+  //       res.send({
+  //         mensage: "Acesso autorizado",
+  //         auth: true,
+  //         token: token,
+  //         idUser: user.idCad,
+  //         type: user.typeCad,
+  //         status: user.stateCad,
+  //       });
+  //     } else {
+  //       res.send({
+  //         mensage: "Acesso negado - Senha incorreta",
+  //         auth: false,
+  //       });
+  //     }
+  //   });
+  // }
 });
 
 app.post("/validationUser", async (req, res) => {
@@ -181,6 +183,7 @@ app.post("/change", async (req, res) => {
     }
   });
 });
+
 app.get("/loadMat/:id", async (req, res) => {
   await bd.sync();
   const mats = [];
@@ -392,6 +395,7 @@ app.get("/getReserva/:idReserva", async (req, res) => {
     });
   }
 });
+
 app.post("/reservas", async (req, res) => {
   await bd.sync();
   const today = new Date();
@@ -541,6 +545,7 @@ app.get("/perfildel/:id", async (req, res) => {
     });
   });
 });
+
 app.get("/perfilreative/:id", async (req, res) => {
   await bd.sync();
   const user = await Prof.findOne({
@@ -571,6 +576,7 @@ app.post("/seachProfid", async (req, res) => {
   });
   res.send(user);
 });
+
 // ============================ TELA DE ADMIN ============================
 app.get("/horario", async (req, res) => {
   await bd.sync();
@@ -578,6 +584,7 @@ app.get("/horario", async (req, res) => {
   const reserva = await rese.findAll();
   res.send(reserva);
 });
+
 // =========================== ADICIONANDO CURSOS AO SISTEMA =======================
 app.get("/cursos", async (req, res) => {
   await bd.sync();
@@ -1046,6 +1053,7 @@ app.get("/prof", async (req, res) => {
   const profile = await Prof.findAll();
   res.send(profile);
 });
+
 app.get("/prof/:id", async (req, res) => {
   await bd.sync();
   const profile = await Prof.findOne({

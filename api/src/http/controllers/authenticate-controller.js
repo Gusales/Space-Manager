@@ -1,4 +1,5 @@
 import { ZodError, z } from 'zod'
+import jwt from 'jsonwebtoken'
 
 import { InvalidCredentialsError } from '../../services/errors/invalid-credentials-error.js'
 import { Authenticate } from '../../services/authenticate.js'
@@ -39,6 +40,7 @@ export async function authenticateController(request, response) {
       const { message } = err
       return response.status(401).send({ message })
     }
+
+    console.error(err)
   }
-  return response.status(200).send({ message: 'hello world!' })
 }

@@ -6,12 +6,12 @@
   "type": "module",
   "scripts": {
     "start": "node src/server.js",
-    "dev": "node --watch src/server.js"
+    "dev": "nodemon src/server.js"
   },
   "author": "Equipe SM",
   "license": "ISC",
   "dependencies": {
-    "bcrypt": "^5.0.1",
+    "bcrypt": "5.1.1",
     "body-parser": "^1.20.0",
     "cors": "^2.8.5",
     "dotenv": "^16.0.3",
@@ -20,6 +20,10 @@
     "mysql": "^2.18.1",
     "mysql2": "^2.3.3",
     "nodemailer": "^6.8.0",
-    "sequelize": "^6.25.3"
+    "sequelize": "6.35.0",
+    "zod": "3.22.4"
+  },
+  "devDependencies": {
+    "nodemon": "3.0.1"
   }
 }

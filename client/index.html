@@ -7,38 +7,53 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Space Manager</title>
   <link rel="icon" type="image/x-icon" href="favicon.ico" />
-  <link rel="stylesheet" href="assets/css/style.css" />
-  <link rel="stylesheet" href="assets/css/login.css" />
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+  <link rel="stylesheet" href="./css/components/home.css">
+
+  <script src="https://unpkg.com/@phosphor-icons/web"></script>
 </head>
 
-<body onload="loadCap()">
-  <header style="justify-content: center">
-    <h1 class="indexHeader">Space Manager</h1>
+<body>
+  <header>
+    <h1>Space Manager</h1>
   </header>
 
-  <div class="containerMain">
+  <div class="wrapper flex flex-center">
     <form method="post">
       <h2>Login</h2>
       <div class="txt_field">
-        <input type="number" id="rm" maxlength="5" required />
+        <input type="number" id="rm" name="rm" maxlength="5" required />
         <span></span>
         <label>RM:</label>
       </div>
       <div class="txt_field">
-        <input type="password" id="senha" required />
+        <input type="password" id="senha" name="password" required />
         <span></span>
         <label>Senha:</label>
       </div>
       <div class="recaptcha">
         <div id="captchaV"></div>
-        <input type="text" name="" id="captchaI" placeholder="Captcha" />
+        <input type="text" name="captchaResponse" id="captchaI" placeholder="Captcha" />
       </div>
-      <a href="./assets/html/changePass/validation.html" class="pass">Esqueceu a Senha?</a>
-      <button type="button" class="btnLogin" value="Login" onclick="login()">Login</button>
+      <a href="./assets/html/changePass/validation.html" class="forgot__password">Esqueceu a Senha?</a>
+      <button type="submit" name="Entrar">Entrar</button>
     </form>
   </div>
-  
-</body>
-<script src="assets/js/login.js"></script>
 
+    <section class="modal fade" id="loginModal" tabindex="-10" aria-labelledby="loginModal" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h2 class="modal-title fs-5" id="loginModalTitle"></h2>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body" id="loginModalContent"></div>
+        </div>
+      </div>
+    </section>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+  <script type="module" src="./scripts/login.js"></script>
+</body>
 </html>

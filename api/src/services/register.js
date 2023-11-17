@@ -1,12 +1,12 @@
 import { hash } from "bcrypt";
-import { sequelize, users } from "../lib/sequelize.js";
+import { sequelize, User } from "../lib/sequelize.js";
 import { UserAlreadyExistsError } from "./errors/user-already-exists-error.js";
 
 export class Register{
   async execute({ name, email, password, rm,  telephone, active, actype }){
     await sequelize.sync()
 
-    let user = await users.findOne({
+    let user = await User.findOne({
       where: {
         rm
       }
@@ -17,7 +17,7 @@ export class Register{
     }
 
 
-    user = await users.create({
+    user = await User.create({
       rm,
       name,
       email,

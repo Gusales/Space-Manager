@@ -1,12 +1,12 @@
 import { compare } from 'bcrypt'
-import { sequelize, users } from '../lib/sequelize.js'
+import { sequelize, User } from '../lib/sequelize.js'
 import { InvalidCredentialsError } from './errors/invalid-credentials-error.js'
 
 export class Authenticate{
   async execute({ rm, password }){
     await sequelize.sync()
 
-    let user = await users.findOne({
+    let user = await User.findOne({
       where: {
         rm
       }

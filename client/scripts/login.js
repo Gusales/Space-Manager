@@ -52,7 +52,7 @@ form.addEventListener('submit', async e => {
       const expiresIn = 60 * 60 * 24 * 30 // 1 month
       createCookie('@sm-1.1.0/token', token, expiresIn)
       createCookie('@sm-1.1.0/user', actype, expiresIn)
-      window.location.href = '/pages/calendar'
+      window.location.href = '/pages/calendar/'
   
     } catch (error) {      
       loginModal.show()

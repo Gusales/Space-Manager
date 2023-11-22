@@ -1,9 +1,9 @@
-import { SearchUniqueUser } from "../../services/search-unique-user.js"
+import { SearchUniqueUserById } from "../../services/search-unique-user-by-id.js"
 
 export async function authenticateUserType(request, response, next){
   const { sub } = request.user
-  const searchUniqueUser = new SearchUniqueUser()
-  const { user } = await searchUniqueUser.execute({ id: sub })
+  const searchUniqueUserById = new SearchUniqueUserById()
+  const { user } = await searchUniqueUserById.execute({ id: sub })
 
   if (!user) {
     return response.status(401).send({ message: 'User not found.' })

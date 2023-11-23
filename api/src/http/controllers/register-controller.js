@@ -16,9 +16,9 @@ export async function registerController(request, response) {
     const { email, name, rm, actype, telephone, password } = registerBodySchema.parse(request.body)
     console.log('bateu?')
     const register = new Register()
-    const { user } = await register.execute({ name, email, password, rm, telephone, actype })
+    const { user: { id } } = await register.execute({ name, email, password, rm, telephone, actype })
 
-    return response.status(201).send({ user })
+    return response.status(201).send({ id })
   } catch (error) {
     if (error instanceof UserAlreadyExistsError) {
       const { message } = error

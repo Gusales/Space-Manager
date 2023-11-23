@@ -10,7 +10,7 @@ export class Register{
     const searchUniqueUserByRM = new SearchUniqueUserByRM()
     let user = await searchUniqueUserByRM.execute({ rm })
 
-    if (user.user) {
+    if (user) { 
       throw new UserAlreadyExistsError()
     }
 

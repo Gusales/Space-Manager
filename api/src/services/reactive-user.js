@@ -1,11 +1,12 @@
 import { sequelize, User } from '../lib/sequelize.js'
+import { UserNotDesactivatedError } from './errors/user-not-desactivated-error.js'
 import { UserNotFoundError } from './errors/user-not-found-error.js'
 
 export class ReactiveUser {
   async execute({ id }){
     await sequelize.sync()
 
-    let user = await User.findOne({
+    const user = await User.findOne({
       where: {
         id
       }
@@ -22,6 +23,8 @@ export class ReactiveUser {
       return true
     }
 
-    return false
+    if (user.active === true) {
+      throw new UserNotDesactivatedError()
+    }
   }
 }

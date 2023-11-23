@@ -10,9 +10,9 @@ export async function createNewSpaceController(request, response){
   try {
     const { name } = createNewSpaceControllerSchema.parse(request.body)
     const createNewSpace = new CreateNewSpace()
-    const { space } = await createNewSpace.execute({ name })
+    const { space: { id } } = await createNewSpace.execute({ name })
 
-    return response.status(201).send({ space })
+    return response.status(201).send({ id })
 
   } catch (error) {
     if (error instanceof ZodError) {

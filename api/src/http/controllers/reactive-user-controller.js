@@ -18,8 +18,6 @@ export async function reactiveUserController(request, response){
       return response.status(202).send({ reactivated: true })
     }
 
-    // return response.status(400).send({ reactivated: false })
-
   } catch (error) {
     if (error instanceof ZodError) {
       const { errors } = error

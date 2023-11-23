@@ -15,7 +15,7 @@
 }
 
 .recaptcha:focus-within:is(.error){
-  box-shadow: 0 0 0 4px var(--red-100);
+  box-shadow: 0 0 0 4px var(--red-300);
 }
 
 #captchaV{
@@ -23,6 +23,7 @@
   height: 100%;
   border-right: 2px solid var(--gray-300);
 }
+
 #captchaI{
   text-transform: uppercase;
   width: 70%;
@@ -30,9 +31,11 @@
   border: none;
   padding-left: 10px;
 }
+
 #captchaI:focus{
   outline: none;
 }
+
 .recaptcha #captchaV{
   width: 30%;
   height: 40px;

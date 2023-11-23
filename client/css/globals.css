@@ -22,21 +22,21 @@ header {
   width: 100vw;
   padding: 0.25rem 0;
   
-  background-color: var(--red-100);
+  background-color: var(--red-300);
   box-shadow: 5px 5px 9px 2px rgba(0, 0, 0, 0.616);
   z-index: 3;
 }
 
 h1 {
   font-size: clamp(1.7rem, 10vw, 2.3rem);
-  text-shadow: 3px 2.8px black;
+  text-shadow: 3px 2.8px var(--black);
   color:var(--white-100);
   font-weight: bold;
 }
 
 h4{
   color:var(--white-100);
-  text-shadow: 3px 2.8px black;
+  text-shadow: 3px 2.8px var(--black);
 }
 
 .wrapper{
@@ -54,5 +54,5 @@ h4{
 }
 
 .error {
-  box-shadow: 0 0 0 2px var(--red-100);
+  box-shadow: 0 0 0 2px var(--red-300);
 }

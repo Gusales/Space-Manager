@@ -24,7 +24,7 @@ form button{
   font-weight: 600;
   color: var(--white-100);
 
-  background: var(--red-100);
+  background: var(--red-300);
 
   margin-top: 1rem;
 
@@ -33,7 +33,7 @@ form button{
 }
 
 form button:is(:hover, :focus, .loading){
-  background: var(--red-200);
+  background: var(--red-100);
 }
 
 form button.loading{
@@ -42,18 +42,18 @@ form button.loading{
 }
 
 form button:focus{
-  box-shadow: 0 0 0 2px var(--red-100);
+  box-shadow: 0 0 0 2px var(--red-300);
 }
 
 h2 {
   font-size: 1.75rem;
-  color: var(--red-100);
+  color: var(--red-300);
   font-weight: 750;
   text-align: center;
 }
 
 .forgot__password{
-  color: #8a8888;
+  color: var(--gray-600);
   cursor: pointer;
   text-decoration: none;
 }

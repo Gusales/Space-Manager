@@ -35,12 +35,12 @@ export async function updateUserController(request, response){
 
     if (error instanceof UserAlreadyExistsError) {
       const { message } = error
-      return response.status(400).send({ message })
+      return response.status(409).send({ message })
     }
 
     if (error instanceof UserNotFoundError) {
       const { message } = error
-      return response.status(400).send({ message })
+      return response.status(404).send({ message })
     }
 
   }

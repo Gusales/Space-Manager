@@ -32,15 +32,13 @@ export async function authenticateController(request, response) {
 
   } catch (err) {
     if (err instanceof ZodError) {
-      const { issues } = err
-      return response.status(400).send({ issues })
+      const { errors } = err
+      return response.status(400).send({ errors })
     }
 
     if (err instanceof InvalidCredentialsError) {
       const { message } = err
-      return response.status(401).send({ message })
+      return response.status(404).send({ message })
     }
-
-    console.error(err)
   }
 }

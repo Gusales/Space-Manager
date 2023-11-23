@@ -16,13 +16,13 @@ export async function createNewSpaceController(request, response){
 
   } catch (error) {
     if (error instanceof ZodError) {
-      const { issues } = error
-      return response.status(400).send(issues)
+      const { errors } = error
+      return response.status(400).send(errors)
     }
 
     if (error instanceof SpaceAlreadyExistsError) {
       const { message } = error
-      return response.status(400).send({ message })
+      return response.status(409).send({ message })
     }
   }
 }

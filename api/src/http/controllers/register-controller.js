@@ -19,13 +19,14 @@ export async function registerController(request, response) {
     const { user } = await register.execute({ name, email, password, rm, telephone, actype })
 
     return response.status(201).send({ user })
-  } catch (err) {
-    if (err instanceof UserAlreadyExistsError) {
-      return response.status(409).send({ mensage: err.message })
+  } catch (error) {
+    if (error instanceof UserAlreadyExistsError) {
+      const { message } = error
+      return response.status(409).send({ message })
     }
-    if (err instanceof ZodError) {
-      const { issues } = err
-      return response.status(400).send({ issues })
+    if (error instanceof ZodError) {
+      const { errors } = error
+      return response.status(400).send({ errors })
     }
 
   }

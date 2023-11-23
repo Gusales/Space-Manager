@@ -4,12 +4,19 @@ import { authenticateUserMiddleware } from "../middlewares/authenticate-user-mid
 import { authenticateUserType } from "../middlewares/authenticate-user-type-middleware.js";
 import { fecthAllUsersController } from "../controllers/fetch-all-users-controller.js";
 import { updateUserController } from "../controllers/update-user-controller.js";
+import { reactiveUserController } from "../controllers/reactive-user-controller.js";
+import { deleteUserController } from "../controllers/delete-user-controller.js";
 
 
 const userRoutes = express.Router()
+
 userRoutes.use(authenticateUserMiddleware)
-userRoutes.get('/users', authenticateUserType, fecthAllUsersController)
-userRoutes.post('/users', authenticateUserType, registerController)
-userRoutes.put('/users/:id', authenticateUserType, updateUserController)
+userRoutes.use(authenticateUserType)
+
+userRoutes.get('/users', fecthAllUsersController)
+userRoutes.post('/users', registerController)
+userRoutes.put('/users/:id', updateUserController)
+userRoutes.patch('/users/reactive/:id', reactiveUserController)
+userRoutes.delete('/users/:id', deleteUserController)
 
 export { userRoutes }

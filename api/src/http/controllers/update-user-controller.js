@@ -1,6 +1,8 @@
 import { ZodError, z } from 'zod'
+
 import { UpdateUser } from '../../services/update-user.js'
 import { UserAlreadyExistsError } from '../../services/errors/user-already-exists-error.js'
+import { UserNotFoundError } from '../../services/errors/user-not-found-error.js'
 
 export async function updateUserController(request, response){
   const updateUserBodySchema = z.object({
@@ -23,7 +25,7 @@ export async function updateUserController(request, response){
 
     const { user } = await updateUser.execute({ id, actype, email, name, rm, telephone })
 
-    return response.status(200).send({ user })
+    return response.status(204).send()
 
   } catch (error) {
     if (error instanceof ZodError) {
@@ -32,6 +34,11 @@ export async function updateUserController(request, response){
     }
 
     if (error instanceof UserAlreadyExistsError) {
+      const { message } = error
+      return response.status(400).send({ message })
+    }
+
+    if (error instanceof UserNotFoundError) {
       const { message } = error
       return response.status(400).send({ message })
     }

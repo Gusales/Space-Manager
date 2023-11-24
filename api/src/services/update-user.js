@@ -28,6 +28,7 @@ export class UpdateUser {
 
     user.name = name;
     user.rm = rm;
+    user.email = email;
     user.telephone = telephone;
     user.actype = actype;
 

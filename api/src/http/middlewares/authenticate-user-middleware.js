@@ -1,4 +1,4 @@
-import jwt from 'jsonwebtoken'
+import { verifyToken } from "../../utils/token.js"
 
 export function authenticateUserMiddleware(request, response, next) {
   let token = request.headers.authorization
@@ -9,10 +9,7 @@ export function authenticateUserMiddleware(request, response, next) {
 
   token = token.split(' ')[1]
 
-  const decodedToken = jwt.verify(token, process.env.JWT_SECRET, (err, decoded) => {
-    if (err) throw err;
-    if (decoded) return decoded
-  })
+  const decodedToken = verifyToken(token)
 
   request.user = decodedToken
   

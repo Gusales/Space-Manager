@@ -1,8 +1,9 @@
 import { ZodError, z } from 'zod'
-import jwt from 'jsonwebtoken'
 
 import { InvalidCredentialsError } from '../../services/errors/invalid-credentials-error.js'
 import { Authenticate } from '../../services/authenticate.js'
+
+import { createToken } from '../../utils/token.js'
 
 export async function authenticateController(request, response) {
   const authenticateBodySchema = z.object({
@@ -15,14 +16,8 @@ export async function authenticateController(request, response) {
     const authenticate = new Authenticate()
     const { user } = await authenticate.execute({ rm, password })
 
-    const token = jwt.sign({ 
-      sub: user.id,
-      name: user.name
-    },
-    process.env.JWT_SECRET ?? 'spacemanager',
-    {
-      expiresIn: 60 * 60 * 24 * 30,
-    });
+    const oneMonth = 60 * 60 * 24 * 30
+    const token = createToken({ sub: user.id, name: user.name, expiresIn: oneMonth })
 
     return response.status(200).send({
       token,

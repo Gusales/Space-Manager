@@ -1,12 +1,12 @@
-.header__button{
+.header__button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
   position: absolute;
   right: 0;
 
-  height: 100%;
-  width: 2.25rem;
-
   transform: translate(-50%);
-
   font-size: 2rem;
 
   border: 0;

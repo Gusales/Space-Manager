@@ -45,6 +45,11 @@ export const User = sequelize.define("users", {
     type: Sequelize.BOOLEAN,
     defaultValue: true,
     allowNull: false
+  },
+  firstLoggin: {
+    type: Sequelize.BOOLEAN,
+    defaultValue: true,
+    allowNull: false
   }
 });
 

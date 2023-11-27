@@ -8,14 +8,13 @@ export class Register{
     await sequelize.sync()
 
     const searchUniqueUserByRM = new SearchUniqueUserByRM()
-    let user = await searchUniqueUserByRM.execute({ rm })
+    const { user } = await searchUniqueUserByRM.execute({ rm })
 
     if (user) { 
       throw new UserAlreadyExistsError()
     }
 
-
-    user = await User.create({
+    const createdUser = await User.create({
       rm,
       name,
       email,
@@ -24,6 +23,7 @@ export class Register{
       active,
       actype
     })
-    return { user }
+
+    return { user: createdUser }
   }
 }

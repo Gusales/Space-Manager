@@ -1,11 +1,11 @@
 import nodemailer from 'nodemailer';
 
-const { NODEMAILER_HOST, NODEMAILER_PORT, NODEMAILER_SECURE, NODEMAILER_USER, NODEMAILER_PASSWORD } = process.env
+const { NODEMAILER_USER, NODEMAILER_PASSWORD } = process.env
 
 export const email = nodemailer.createTransport({
-    host: NODEMAILER_HOST,
-    port: NODEMAILER_PORT,
-    secure: NODEMAILER_SECURE, //True para 465, false para as outras
+    host: "smtp.gmail.com",
+    port: 587,
+    secure: false,
     auth: {
         user: NODEMAILER_USER,
         pass: NODEMAILER_PASSWORD
@@ -14,7 +14,7 @@ export const email = nodemailer.createTransport({
 
 export async function sendEmail({ emailTo, subject, html, text }){
   const { accepted, rejected } = await email.sendMail({
-    from: `Space Manager <${emailTo}>`,
+    from: `Space Manager <${NODEMAILER_USER}>`,
     to: emailTo,
     subject,
     html,

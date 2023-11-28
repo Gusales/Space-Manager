@@ -3,6 +3,7 @@ import { Register } from "../../services/register.js";
 import { UserAlreadyExistsError } from "../../services/errors/user-already-exists-error.js";
 
 import { generatePassword } from '../../utils/generate-password.js'
+import { SendEmailError } from "../../services/errors/send-email-error.js";
 
 export async function registerController(request, response) {
   const registerBodySchema = z.object({
@@ -26,10 +27,15 @@ export async function registerController(request, response) {
       const { message } = error
       return response.status(409).send({ message })
     }
+
     if (error instanceof ZodError) {
       const { errors } = error
       return response.status(400).send({ errors })
     }
 
+    if (err instanceof SendEmailError) {
+      const { message } = err
+      return response.status(500).send({ message })
+    }
   }
 }

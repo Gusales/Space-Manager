@@ -5,7 +5,7 @@ export class CreateNewSpace {
   async execute({ name }){
       await sequelize.sync()
 
-      let spaces = await space.findOne({
+      let spaces = await Space.findOne({
         where: {
           name
         }

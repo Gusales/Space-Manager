@@ -4,6 +4,7 @@ import { InvalidCredentialsError } from '../../services/errors/invalid-credentia
 import { Authenticate } from '../../services/authenticate.js'
 
 import { createToken } from '../../utils/token.js'
+import { SendEmailError } from '../../services/errors/send-email-error.js'
 
 export async function authenticateController(request, response) {
   const authenticateBodySchema = z.object({
@@ -34,6 +35,11 @@ export async function authenticateController(request, response) {
     if (err instanceof InvalidCredentialsError) {
       const { message } = err
       return response.status(404).send({ message })
+    }
+
+    if (err instanceof SendEmailError) {
+      const { message } = err
+      return response.status(500).send({ message })
     }
   }
 }

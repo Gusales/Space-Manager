@@ -1,4 +1,5 @@
 import { sequelize, Space } from '../lib/sequelize.js'
+import { SpaceAlreadyExistsError } from './errors/space-already-exists-error.js'
 import { SpaceNotFoundError } from './errors/space-not-found-error.js'
 
 export class UpdateSpaceName {
@@ -11,8 +12,18 @@ export class UpdateSpaceName {
       }
     })
 
+    const isExistsSpace = await Space.findOne({
+      where: {
+        name
+      }
+    })
+
     if (!space) {
       throw new SpaceNotFoundError()
+    }
+
+    if (space.id !== isExistsSpace.id) {
+      throw new SpaceAlreadyExistsError()
     }
 
     space.name = name;

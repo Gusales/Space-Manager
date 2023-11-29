@@ -5,8 +5,7 @@ import { authenticateUserMiddleware } from "../middlewares/authenticate-user-mid
 import { authenticateUserType } from "../middlewares/authenticate-user-type-middleware.js";
 
 
-const spaceRoutes = express.Router()
+export const spaceRoutes = express.Router()
 spaceRoutes.use(authenticateUserMiddleware)
-spaceRoutes.route('/space').get(fetchSpacesController).post(authenticateUserType, createNewSpaceController)
-
-export { spaceRoutes }
+spaceRoutes.get('/spaces', fetchSpacesController)
+spaceRoutes.post('/spaces', authenticateUserType, createNewSpaceController)

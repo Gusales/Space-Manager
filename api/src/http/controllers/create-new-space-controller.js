@@ -10,7 +10,7 @@ export async function createNewSpaceController(request, response){
   try {
     const { name } = createNewSpaceControllerSchema.parse(request.body)
     const createNewSpace = new CreateNewSpace()
-    const { space: { id } } = await createNewSpace.execute({ name })
+    const { spaces: { id } } = await createNewSpace.execute({ name })
 
     return response.status(201).send({ id })
 

@@ -6,7 +6,7 @@ export const sequelize = new Sequelize(DATABASE, DATABASE_USER, DATABASE_PASSWOR
   dialect: "mysql",
   host: DATABASE_HOST,
   port: DATABASE_PORT,
-  logging: console.log
+  logging: false
 });
 
 export const User = sequelize.define("users", {
@@ -84,19 +84,23 @@ export const Booking = sequelize.define('bookings', {
   description: {
     type: Sequelize.STRING,
     allowNull: false,
-  },
-  user_id: {
-    type: Sequelize.STRING,
-    references: {
-      model: User,
-      key: 'id'
-    }
-  },
-  space_id: {
-    type: Sequelize.STRING,
-    references: {
-      model: Space,
-      key: 'id'
-    }
-  },
+  }
+})
+
+User.hasMany(Booking, {
+  foreignKey: 'user_id'
+})
+
+Space.hasMany(Booking, {
+  foreignKey: 'space_id'
+})
+
+Booking.belongsTo(User, {
+  constraint: true,
+  foreignKey: 'user_id'
+})
+
+Booking.belongsTo(Space, {
+  constraint: true,
+  foreignKey: 'space_id'
 })

@@ -9,6 +9,9 @@
     "dev": "nodemon src/server.js",
     "seed": "node src/seed.js"
   },
+  "engines": {
+    "node": "18"
+  },
   "author": "Equipe SM",
   "license": "ISC",
   "dependencies": {

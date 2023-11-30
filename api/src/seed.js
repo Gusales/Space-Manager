@@ -1,7 +1,8 @@
 import 'dotenv/config'
 import mysql from 'mysql2/promise.js'
 import { hash } from 'bcrypt'
-import { sequelize, User } from './lib/sequelize.js'
+import { sequelize, User, Booking, Space } from './lib/sequelize.js'
+import { CreateNewBooking } from './services/create-new-booking.js'
 
 const users = [{
   name: 'root',
@@ -25,6 +26,16 @@ const users = [{
   rm: 99997,
   actype: 'COORD',
 }]
+
+const spaces = [
+  { name: 'Quadra' },
+  { name: 'Laboratório de Informática 1' },
+  { name: 'Laboratório de Informática 2' },
+  { name: 'Laboratório de Informática 3' },
+  { name: 'Laboratório de Informática 4' },
+  { name: 'Laboratório de Química' },
+  { name: 'Auditório' },
+]
 
 async function seed(){
   try {
@@ -52,10 +63,45 @@ async function seed(){
           rm: user.rm,
           password: await hash(user.password, 6),
           telephone: user.telephone ?? null,
-          actype: user.actype
+          actype: user.actype,
+          firstLoggin: user.rm === 99999 ? false : true,
         })
       }
     })
+
+    for (let index = 0; index < spaces.length; index++) {
+      await Space.create({
+        name: spaces[index].name
+      });
+    }
+
+    const findUser = await User.findOne({
+      where: {
+        rm: users[0].rm
+      }
+    })
+
+    const findOneSpace = await Space.findOne({
+      where: {
+        name: spaces[0].name
+      }
+    })
+
+    await Booking.create({
+      dateFrom: new Date(),
+      dateTo: new Date(),
+      description: 'Reserva de teste',
+      user_id: findUser.id,
+      space_id: findOneSpace.id
+    })
+
+
+    const createNewBooking = new CreateNewBooking()
+    await createNewBooking.execute({
+      space_id: findOneSpace.id,
+      user_id: findUser.id
+    })
+    
     
     await mysql_connection.end()
   } catch (error) {

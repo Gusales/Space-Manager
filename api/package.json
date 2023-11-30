@@ -4,13 +4,13 @@
   "description": "Api criada para fazer a conexão entre Space Manager (Front-End), com o banco de dados",
   "main": "src/server.js",
   "type": "module",
+  "engines": {
+    "node": "18"
+  },
   "scripts": {
     "start": "node src/server.js",
     "dev": "nodemon src/server.js",
     "seed": "node src/seed.js"
-  },
-  "engines": {
-    "node": "18"
   },
   "author": "Equipe SM",
   "license": "ISC",

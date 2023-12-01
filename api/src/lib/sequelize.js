@@ -73,11 +73,11 @@ export const Booking = sequelize.define('bookings', {
     allowNull: false,
     primaryKey: true
   },
-  dateFrom: {
+  starts_at: {
     type: Sequelize.DATE,
     allowNull: false,
   },
-  dateTo: {
+  ends_at: {
     type: Sequelize.DATE,
     allowNull: false,
   },

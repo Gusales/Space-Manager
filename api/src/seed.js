@@ -88,8 +88,8 @@ async function seed(){
     })
 
     await Booking.create({
-      dateFrom: new Date(),
-      dateTo: new Date(),
+      starts_at: new Date(),
+      ends_at: new Date(),
       description: 'Reserva de teste',
       user_id: findUser.id,
       space_id: findOneSpace.id

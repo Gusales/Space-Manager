@@ -84,6 +84,10 @@ export const Booking = sequelize.define('bookings', {
   description: {
     type: Sequelize.STRING,
     allowNull: false,
+  },
+  code: {
+    type: Sequelize.STRING,
+    allowNull: false,
   }
 })
 

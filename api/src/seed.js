@@ -2,7 +2,7 @@ import 'dotenv/config'
 import mysql from 'mysql2/promise.js'
 import { hash } from 'bcrypt'
 import { sequelize, User, Booking, Space } from './lib/sequelize.js'
-import { CreateNewBooking } from './services/create-new-booking.js'
+import { generateCUID } from './utils/generate-cuid.js'
 
 const users = [{
   name: 'root',
@@ -102,7 +102,8 @@ async function seed(){
       ends_at: '2023-12-06T11:20:00.958Z',
       description: 'Reserva de teste',
       user_id: findUser.id,
-      space_id: findOneSpace.id
+      space_id: findOneSpace.id,
+      code: generateCUID()
     })
     console.log('Booking has created sucessfully')
     

@@ -1,12 +1,15 @@
-import { sequelize, Booking, User, Space } from '../lib/sequelize.js'
-import { calculateTimeBetweenTwoDates } from '../utils/calculate-time.js'
-import { CannotReservateInLongDates } from './errors/reservate-space-long-date-error.js'
-
-import { SpaceNotFoundError } from './errors/space-not-found-error.js'
-import { UserNotFoundError } from './errors/user-not-found-error.js'
+import { sequelize, Booking } from '../lib/sequelize.js'
 
 import { FetchAllBookingBySpaceId } from './fetch-all-bookings-by-space-id.js'
 import { FetchAllBookingByUserId } from './fetch-all-bookings-by-user-id.js'
+
+import { CannotReservateInLongDates } from './errors/reservate-space-long-date-error.js'
+import { SpaceNotFoundError } from './errors/space-not-found-error.js'
+import { UserNotFoundError } from './errors/user-not-found-error.js'
+
+
+import { generateCUID } from './../utils/generate-cuid.js';
+import { calculateTimeBetweenTwoDates } from '../utils/calculate-time.js'
 
 export class CreateNewBooking {
   async execute({
@@ -68,6 +71,7 @@ export class CreateNewBooking {
       description,
       user_id,
       space_id,
+      code: generateCUID()
     })
 
     return {

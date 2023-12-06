@@ -39,16 +39,20 @@ const spaces = [
 
 async function seed(){
   try {
+    console.log('Executing database conection')
     const mysql_connection = await mysql.createConnection({
       user: process.env.DATABASE_USER,
       password: process.env.DATABASE_PASSWORD
     })
-
+    console.log('Database connected successfully')
+    console.log(`Create database ${process.env.DATABASE}`)
     await mysql_connection.query(`DROP DATABASE IF EXISTS ${process.env.DATABASE}`)
     await mysql_connection.query(`CREATE DATABASE IF NOT EXISTS ${process.env.DATABASE}`)
+    console.log(`Database ${process.env.DATABASE} created!`)
     
     await sequelize.sync()
 
+    console.log('Creating users')
     users.forEach(async (user) => {
       let userToCreate = await User.findOne({
         where: {
@@ -69,11 +73,15 @@ async function seed(){
       }
     })
 
+    console.log('Users created successfully')
+    console.log('Inserting spaces')
     for (let index = 0; index < spaces.length; index++) {
       await Space.create({
         name: spaces[index].name
       });
     }
+
+    console.log('Spaces have been inserted successfully')
 
     const findUser = await User.findOne({
       where: {
@@ -87,21 +95,16 @@ async function seed(){
       }
     })
 
+    console.log(`Create a booking to ${findUser.name} in space ${findOneSpace.name}`)
+
     await Booking.create({
-      starts_at: new Date(),
-      ends_at: new Date(),
+      starts_at: '2023-12-06T10:30:00.958Z',
+      ends_at: '2023-12-06T11:20:00.958Z',
       description: 'Reserva de teste',
       user_id: findUser.id,
       space_id: findOneSpace.id
     })
-
-
-    const createNewBooking = new CreateNewBooking()
-    await createNewBooking.execute({
-      space_id: findOneSpace.id,
-      user_id: findUser.id
-    })
-    
+    console.log('Booking has created sucessfully')
     
     await mysql_connection.end()
   } catch (error) {

@@ -16,6 +16,6 @@ app.use(cors({
 app.use(express.json())
 
 app.use(authenticateRoute)
-app.use(userRoutes)
 app.use(spaceRoutes)
 app.use(bookingsRoutes)
+app.use(userRoutes)

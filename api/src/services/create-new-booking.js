@@ -60,8 +60,8 @@ export class CreateNewBooking {
     
     const isUserHaveBookingInSameHour = calculateTimeBetweenTwoDates(create_initial_date, create_end_date, user.bookings)
     const isSpaceHaveBookingInSameHour = calculateTimeBetweenTwoDates(create_initial_date, create_end_date, space.bookings)
-    
-    if (isUserHaveBookingInSameHour.length !== 0 && isSpaceHaveBookingInSameHour.length !== 0) {
+
+    if (isUserHaveBookingInSameHour.length !== 0 || isSpaceHaveBookingInSameHour.length !== 0) {
       throw new Error('You cannot reservate this space because have a booking in same hour.')
     }
 

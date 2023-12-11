@@ -4,6 +4,7 @@ import { fetchAllBookingsController } from "../controllers/fetch-all-bookings-co
 import { createNewBookingController } from "../controllers/create-new-booking-controller.js";
 import { updateBookingController } from "../controllers/update-booking-controller.js";
 import { updateBookingMiddleware } from "../middlewares/update-booking-middleware.js";
+import { deleteBookingController } from "../controllers/delete-booking-controller.js";
 
 export const bookingsRoutes = express.Router()
 
@@ -11,3 +12,4 @@ bookingsRoutes.use(authenticateUserMiddleware)
 bookingsRoutes.get('/bookings', fetchAllBookingsController)
 bookingsRoutes.post('/bookings', createNewBookingController)
 bookingsRoutes.put('/bookings/:id', updateBookingMiddleware, updateBookingController)
+bookingsRoutes.delete('/bookings/:id', deleteBookingController)

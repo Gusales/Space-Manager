@@ -1,5 +1,5 @@
 {
-  "name": "space-api",
+  "name": "space-manager-server-api",
   "version": "1.0.0",
   "description": "Api criada para fazer a conexão entre Space Manager (Front-End), com o banco de dados",
   "main": "src/server.js",

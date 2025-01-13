@@ -6,7 +6,7 @@
 ![Bitbucket open issues](https://img.shields.io/bitbucket/issues/Gusales/Space-Manager?style=for-the-badge)
 ![Bitbucket open pull requests](https://img.shields.io/bitbucket/pr-raw/Gusales/Space-Manager?style=for-the-badge)
 
-<img src=".github/preview.png" width="100%">
+<img src="/docs/preview.png" width="100%">
 
 ## 📖 Sobre o projeto
 

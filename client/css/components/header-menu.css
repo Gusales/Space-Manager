@@ -1,0 +1,17 @@
+.header__button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  position: absolute;
+  right: 0;
+
+  transform: translate(-50%);
+  font-size: 2rem;
+
+  border: 0;
+  outline: 0;
+  background: transparent;
+  cursor: pointer;
+  color: var(--white);
+}

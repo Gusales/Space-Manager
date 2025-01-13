@@ -1,0 +1,64 @@
+form {
+  width: clamp(100px, 60vw, 400px);
+  min-width: 300px;
+
+  padding: 1.5rem;
+
+  background: var(--white);
+  border-radius: 10px;
+  box-shadow: 10px 10px 15px rgba(0, 0, 0, 0.05);
+}
+
+form button{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  width: 100%;
+  padding: 0.5rem;
+  border-radius: 4px;
+  outline: 0;
+  border: 0;
+
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--white-100);
+
+  background: var(--red-300);
+
+  margin-top: 1rem;
+
+  transition: background 400ms;
+  cursor: pointer;
+}
+
+form button:is(:hover, :focus, .loading){
+  background: var(--red-100);
+}
+
+form button.loading{
+  cursor: not-allowed;
+  box-shadow: none;
+}
+
+form button:focus{
+  box-shadow: 0 0 0 2px var(--red-300);
+}
+
+h2 {
+  font-size: 1.75rem;
+  color: var(--red-300);
+  font-weight: 750;
+  text-align: center;
+}
+
+.forgot__password{
+  color: var(--gray-600);
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.forgot__password:is(:focus, :hover){
+  text-decoration: underline;
+  outline: none;
+}

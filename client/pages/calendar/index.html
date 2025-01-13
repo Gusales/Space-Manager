@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Calendário de Reservas | Space Manager</title>
+
+  <link rel="stylesheet" href="./styles.css">
+
+  <script src="https://unpkg.com/@phosphor-icons/web"></script>
+</head>
+<body>
+  <header class="flex flex-center">
+    <h1>Space Manager</h1>
+    <button onclick="handleActiveModal()" data-bs-toggle="modal" data-bs-target="#menu">
+      
+    </button>
+    <button class="header__button flex flex-center navbar-toggler" type="button" name="Open Menu" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">
+      <i class="ph-bold ph-list"></i>
+    </button>
+  </header>
+
+  <div class="wrapper flex flex-center">
+    <section id="calendar"></section>
+  </div>
+
+  <div class="offcanvas offcanvas-end modalMenu" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
+    <div class="offcanvas-header modalHeader">
+      <h5 class="offcanvas-title" id="offcanvasRightLabel">Menu</h5>
+      <button class="header__button" type="button" data-bs-dismiss="offcanvas">
+        <i class="ph-bold ph-x"></i>
+      </button>
+    </div>
+    <div class="offcanvas-body modalBody">
+      <a href="#" class="disabled">Link para Calendário</a>
+      <a href="#">Link para Usuários</a>
+      <a href="#">Link para Espaços</a>
+    </div>
+  </div>
+  
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+  <script src="./components/calendar/js/evo-calendar.min.js"></script>
+  <script src="./components/calendar/js/evo-calendar.js"></script>
+  <script src="./scripts/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Space Manager</title>
+    <link rel="icon" type="image/x-icon" href="../../../favicon.ico" />
+    <link rel="stylesheet" href="../../css/style.css" />
+    <link rel="stylesheet" href="../../css/login.css" />
+  </head>
+
+  <body onload="auth()" >
+    <header style="justify-content: center">
+      <h1 class="indexHeader">Space Manager</h1>
+    </header>
+
+    <div class="containerMain">
+      <form method="post" style="height: initial;">
+        <h2>Alterar Senha</h2>
+
+        <div class="txt_field">
+          <input type="password" id="senha1" required />
+          <span></span>
+          <label>Senha</label>
+        </div>
+
+        <div class="txt_field">
+          <input type="password" id="senha2" required />
+          <span></span>
+          <label>Confirmar Senha</label>
+        </div>
+
+        <button type="button" class="btnLogin" value="Login" onclick="validation()">
+          Enviar
+        </button>
+      </form>
+    </div>
+
+    <script src="../../js/change.js"></script>
+  </body>
+</html>

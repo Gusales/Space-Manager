@@ -1,0 +1,130 @@
+@import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css");
+
+#modalBtn{
+  font-size: 25px;
+  color: #e21d1d;
+  cursor: pointer;
+  border: none;
+  background-color: transparent;
+}
+#modalEdit{
+  background-color: #f02727;
+  color: #e1e1e1;
+  padding: 0px 7px 0px 7px;
+  min-height: 100%;
+  cursor: pointer;
+  border: none;
+  border-radius: 0px 105px 0px 105px;
+}
+.controls{
+  text-align: center;
+}
+.btn-reserva{
+  width: 50%;
+  height: 30px;
+  font-weight: 500;
+  border-radius: 5px;
+  background-color: rgb(54, 240, 116);
+}
+.btn-remove-event{
+  color: #e1e1e1;
+  background-color:#dc3545;
+  font-weight: 500;
+  padding: 5px;
+  border-radius: 5%;
+  margin-bottom: 30px;
+  padding: 10px;
+  border: none;
+}
+
+textarea {
+  width: 75%;
+  height: 200px;
+  border: 2px solid #e21d1d;
+  border-radius: 5px;
+  outline: none;
+  padding: 10px;
+  resize: none;
+}
+.dropdown-menu{
+  border: 2px solid #a6a6a6;
+}
+.btn{
+  height: 30px;
+  width: 100px;
+  padding: 0 15px 0 15px;
+  margin-left: 3px;
+}
+.modal-containerSM {
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  display: none;
+  background-color: rgba(81, 83, 85, 0.658);
+  justify-content: center;
+  align-items: center;
+  z-index: 4;
+}
+.modalSM {
+  height: 75%;
+  width: 30%;
+  background-color: white;
+  padding-top: 10px;
+  border-radius: 13px;
+  text-align: center;
+  box-shadow: 10px 10px 15px rgba(0, 0, 0, 0.24);
+}
+.selects {
+  width: 100%;
+  display: flex;
+  justify-content: space-evenly;
+  padding: 15px;
+}
+.h1Modal {
+  color: #e21d1d;
+  text-shadow: 1px 1px rgba(0, 0, 0, 0.822);
+}
+.controls {
+  margin-top: 10px;
+  width: 100%;
+}
+.btnModal {
+  height: 25px;
+  width: 75px;
+  margin-left: 5px;
+  outline: none;
+  border: 1px solid #a6a6a6;
+  border-radius: 5px;
+}
+.btnR {
+  background-color: rgba(0, 255, 0, 0.966);
+  color: black;
+}
+.btnC {
+  color: rgb(233, 225, 225);
+  background-color: #e21d1d;
+  text-shadow: 1px 1px rgb(0, 0, 0);
+}
+
+
+/* -------------------- BOTÃO OPEN MODAL --------------------*/
+@keyframes modal {
+  from{
+    opacity: 0;
+    transform: translate(0, -100px);
+  }
+  to{
+    opacity: 1;
+    transform: translate(0, 0);
+  }
+}
+.animationModal{
+  display: flex;
+  animation: modal .5s;
+}
+@media (max-width: 750px) {
+  .modalSM {
+    width: 80%;
+    height: 55%;
+  }
+}

@@ -1,0 +1,34 @@
+============================ FOR ALL ===============================
+
+1. Login (Verificar no banco, tabela cadastro).
+    -> Usuário Não encontrado: Acesso Negado.
+    -> Usuário encontrado:
+        -> Usuário: Acesso ao calendário - location.href ...
+        -> Admin: Acesso a parte de Administração.
+        -> Devs: Acesso a APi.
+
+============================ FOR USER ==============================
+
+2. TELA DE USUÁRIO - Calendário(CRUD COMPLETO, tabela reserva).
+    -> Reservas encontrada:
+        -> Retornar as informações da reserva com base no login do professor - Cookies?
+            -> Modificar ou deletar as Reservas;
+    -> Nova reserva:
+        -> POST contendo as informações de reserva;
+
+3. TELA DE USUÁRIO - PERFIL(tabela cadastro)
+    -> Retornar as informações sobre o Usuário;
+
+============================= FOR ADMIN ============================
+
+4. TELA DE ADMIN - Tabela de horários(tabela reserva).
+    -> Retornar as reservas com os horários;
+
+5. TELA DE ADMIN - Cadastrar professores(tabela cadastro).
+    -> Adicionar usuários;
+
+6. TELA DE ADMIN - Tabela de usuários(tabela cadastro).
+    -> Modificar ou Deletar usuários
+
+
+..img/foto1

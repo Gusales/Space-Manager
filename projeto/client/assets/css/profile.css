@@ -1,0 +1,172 @@
+::placeholder:disabled{
+    background-color: white;
+}
+
+hr {
+    margin-top: 40px;
+    margin-bottom: 40px;
+    width: 90%;
+    margin-left: 45px;
+}
+input:disabled{
+    border: none;
+    background-color: white;
+}
+input {
+    margin-bottom: 20px;
+    width: 75%;
+    height: 35px;
+    background-color: white;
+    border: 2px solid #e01313;
+    text-align: center;
+    border-radius: 10px;
+    outline: none;
+    font-size: 1.05em;
+}
+input:-webkit-autofill {
+    box-shadow: none;
+    -webkit-box-shadow: 0 0 0 30px white inset;
+}
+
+input:-webkit-autofill {
+    -webkit-text-fill-color: black !important;
+}
+h2{
+    color: #B70407;
+}
+.nomeProfessor{
+    text-shadow: none;
+    color: #B70407;
+}
+.profile {
+    height: 100%;
+    border-right: 1px solid rgb(121, 111, 111);
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+
+.profileContainer {
+    height: 100%;
+    margin-top: 20px;
+}
+
+.profileImg {
+    width: 200px;
+    height: 200px;
+    margin-top: 20px;
+}
+
+.profileName {
+    text-shadow: none;
+    font-size: 40px;
+}
+
+.profileNum {
+    font-size: 24px;
+}
+
+.formProfile {
+    text-align: center;
+    width: 100%;
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    margin-top: 30px;
+}
+.btnVoltar{
+    width: 50px;
+    height: 50px;
+    padding-right: 20px;
+}
+.list {
+    width: 40%;
+    font-size: 20px;
+    text-align: center;
+    margin-left: 13px;
+    margin-top: 20px;
+    display: inline-block;
+}
+
+p {
+    display: inline;
+}
+
+.profile,
+.profileContainer {
+    display: flex;
+    justify-content: center;
+}
+.mainContainer {
+    margin: 0 auto;
+    margin-top: 100px;
+    height: 85%;
+    width: 80%;
+    background-color: white;
+    min-width: 400px;
+    display: flex;
+    justify-content: center;
+    border-radius: 13px;
+}
+.mainContainer > div{
+    flex: 1 1 200px;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+.profileName,
+.profileNum {
+    text-align: center;
+    margin: 0 auto;
+}
+
+.titleProfile {
+    position: sticky;
+    height: 30px;
+    text-align: center;
+    width: 100%;
+}
+
+#cancelButton {
+  background-color: #d36c6c;
+  width: 35px;
+  height: 35px;
+  border: none;
+  cursor: pointer;
+}
+
+#saveButton {
+  background-color: rgb(20, 182, 20);
+  width: 35px;
+  height: 35px;
+  color: black;
+  border: none;
+  cursor: pointer;
+}
+#saveButton, #cancelButton{
+    border-radius: 20%;
+}
+.fa-plus{
+    cursor: pointer;
+    margin-left: 5px;
+    font-size: 13px;
+}
+.addFotoProf{
+    text-decoration: none;
+    width: 200px;
+    height: 20px;
+    color: #B70407;
+    font-size: 21px;
+}
+@media (max-width: 800px) {
+    .profile{
+        border: none;
+    }
+    .mainContainer{
+        flex-flow: column;
+        height: 950px;
+        padding-bottom: 10px;
+    }
+  }
